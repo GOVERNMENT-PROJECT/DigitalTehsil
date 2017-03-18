@@ -19,21 +19,11 @@ public class MyResource {
      *
      * @return String that will be returned as a text/plain response.
      */
+	
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
         return "Got it!";
     }
-    
-    @Path("/newborn")
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_PLAIN)
-	public String newBornRegister(dal.NewBorn newuser)
-	{
-		String s= "sssssssssssssss";
-		return s;
-		
-	}
     
 }

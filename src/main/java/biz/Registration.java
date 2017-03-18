@@ -1,5 +1,5 @@
 package biz;
-
+/*
 import org.hibernate.Session;
 
 public class Registration {
@@ -18,8 +18,10 @@ public class Registration {
 		{
 			return e.getMessage();
 		}
-		
+		*/
 		//session.shutdown();
+/*
 		return "1";
 	}
 }
+*/

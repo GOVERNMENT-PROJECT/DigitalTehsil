@@ -1,112 +1,57 @@
 package dal;
 
-import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="newborn")
-public class NewBorn {
+public class NewBorn
+{
+	public String fathersName = null;
+	public String mothersName = null;
+	public String fatherAadhaarNumber = null;
+	public String sex = null;
+	public String name = null;
+	public String district = null;
+	public String placeOfBirth = null;
 	
-	@Id@GeneratedValue
-	@Column(name="NewBornId")
-	int NewBornId;
-	
-	@Column(name="FathersName")
-	String FathersName;
-	
-	@Column(name="MothersName")
-	String Mothersname;
-	
-	@Column(name="FatherAadhaarNumber")
-	String FatherAadhaarNumber;
-	
-	@Column(name="Sex")
-	String Sex;
-	
-	@Column(name="Name")
-	String Name;
-	
-	//@Column(name="DateOfBirth")
-	//Date DateOfBirth;
-	
-	@Column(name="District")
-	String District;
-	
-	@Column(name="PlaceOfBirth")
-	String PlaceOfBirth;
-	
-	
-	public NewBorn() {}
-	//@Column(name="RegistrationNumber")
-	//int RegistrationNumber;
-	
-	/*
-	public int getNewUserId() {
-		return NewUserId;
-	}
-	public void setNewUserId(int newUserId) {
-		NewUserId = newUserId;
-	}*/
 	public String getFathersName() {
-		return FathersName;
+		return fathersName;
 	}
 	public void setFathersName(String fathersName) {
-		this.FathersName = fathersName;
+		this.fathersName = fathersName;
 	}
-	public String getMothersname() {
-		return Mothersname;
+	public String getMothersName() {
+		return mothersName;
 	}
-	public void setMothersname(String mothersname) {
-		this.Mothersname = mothersname;
+	public void setMothersName(String mothersName) {
+		this.mothersName = mothersName;
 	}
 	public String getFatherAadhaarNumber() {
-		return FatherAadhaarNumber;
+		return fatherAadhaarNumber;
 	}
 	public void setFatherAadhaarNumber(String fatherAadhaarNumber) {
-		this.FatherAadhaarNumber = fatherAadhaarNumber;
+		this.fatherAadhaarNumber = fatherAadhaarNumber;
 	}
 	public String getSex() {
-		return Sex;
+		return sex;
 	}
 	public void setSex(String sex) {
-		this.Sex = sex;
+		this.sex = sex;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		this.Name = name;
-	}/*
-	public Date getDateOfBirth() {
-		return DateOfBirth;
+		this.name = name;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
-		DateOfBirth = dateOfBirth;
-	}*/
 	public String getDistrict() {
-		return District;
+		return district;
 	}
 	public void setDistrict(String district) {
-		this.District = district;
+		this.district = district;
 	}
 	public String getPlaceOfBirth() {
-		return PlaceOfBirth;
+		return placeOfBirth;
 	}
 	public void setPlaceOfBirth(String placeOfBirth) {
-		this.PlaceOfBirth = placeOfBirth;
-	}/*
-	public int getRegistrationNumber() {
-		return RegistrationNumber;
+		this.placeOfBirth = placeOfBirth;
 	}
-	public void setRegistrationNumber(int registrationNumber) {
-		RegistrationNumber = registrationNumber;
-	}*/
 	
-	
-
 }
+	
