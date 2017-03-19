@@ -9,19 +9,21 @@ import javax.ws.rs.core.MediaType;
 
 @Path("register")
 public class Registration {
-	/*
+	
 	@Path("/newborn")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String newBornRegister(dal.NewBorn newuser)
 	{
+		System.out.println("Fathers Name : " +newuser.getFathersName());
+		System.out.println("Mothers Name : " +newuser.getMothersName());
 		String s= new  biz.Registration().newBornRegistration(newuser);
 		return s;
 		
 	}
 	
-	*/
+	/*
 	
 	
 	@Path("/newborn")
@@ -40,5 +42,5 @@ public class Registration {
 		return so;
 		
 	}
-
+        */
 }
