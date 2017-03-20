@@ -14,6 +14,8 @@
 		<property name="format_sql">true</property>
 		<property name="hbm2ddl.auto">update </property>
 <!--		<mapping resource="user.hbm.xml" />      -->
-		<mapping class="dal.NewBorn" />
+
+		<mapping class ="model.NewBorn" />
+		<mapping class ="model.FamilyDetail" />
 	</session-factory>
 </hibernate-configuration>

@@ -1,9 +1,12 @@
 package restApi;
 
+import java.util.ArrayList;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -14,11 +17,31 @@ public class Registration {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String newBornRegister(dal.NewBorn newuser)
+	public String newBornRegister(model.NewBorn newuser)
 	{
 		System.out.println("Fathers Name : " +newuser.getFathersName());
 		System.out.println("Mothers Name : " +newuser.getMothersName());
 		String s= new  biz.Registration().newBornRegistration(newuser);
+		return s;
+		
+	}
+	
+	
+	@Path("/rationcard/{Id}")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String rationCardRegister(@PathParam("Id") String id,ArrayList<model.FamilyDetail> rationcarddetail)
+	{
+		System.out.println("size : " +rationcarddetail.size());
+		for(model.FamilyDetail rationcard : rationcarddetail)
+		{
+			System.out.println("relation="+rationcard.getRealationWithHead());
+			System.out.println("a no="+rationcard.getAadhaarNo());
+			
+		}
+		System.out.println("id : " +id);
+		String s= new  biz.Registration().rationCardRegistration(rationcarddetail,id);
 		return s;
 		
 	}
