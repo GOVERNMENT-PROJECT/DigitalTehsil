@@ -46,6 +46,34 @@ public class Registration {
 		
 	}
 	
+	
+	@Path("/castecertificate/{Id}")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String casteRegister(@PathParam("Id") String id,model.CasteCertificate cz)
+	{
+		
+		System.out.println("id : " +id);
+		String s= new  biz.Registration().casteCertificateRegistration(cz, id);
+		return s;
+		
+	}
+	
+	
+	@Path("/domicilecertificate/{Id}")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String domicileRegister(@PathParam("Id") String id,model.DomicileCertificate cz)
+	{
+		
+		System.out.println("id : " +id);
+		String s= new  biz.Registration().domicileCertificateRegistration(cz, id);
+		return s;
+		
+	}
+	
 	/*
 	
 	

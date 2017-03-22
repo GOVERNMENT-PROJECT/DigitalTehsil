@@ -17,5 +17,7 @@
 
 		<mapping class ="model.NewBorn" />
 		<mapping class ="model.FamilyDetail" />
+		<mapping class ="model.CasteCertificate" />
+		<mapping class ="model.DomicileCertificate" />
 	</session-factory>
 </hibernate-configuration>

@@ -67,4 +67,68 @@ public class Registration {
 
 		
 	}
+	
+	
+	public String casteCertificateRegistration(model.CasteCertificate cz,String id)
+	{
+		
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx=null;
+		try
+		{
+		tx=session.beginTransaction();
+				cz.setAadharNo(id);
+				session.save(cz);
+				tx.commit();
+				
+			
+		   return "1";
+		}
+		
+		catch(Exception e)
+		{
+			tx.rollback();
+			return e.getMessage();
+		}
+		
+		finally
+		{
+			session.close();
+		}
+
+		
+	}
+	
+	
+	public String domicileCertificateRegistration(model.DomicileCertificate cz,String id)
+	{
+		
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx=null;
+		try
+		{
+		tx=session.beginTransaction();
+				cz.setAadharNo(id);
+				session.save(cz);
+				tx.commit();
+				
+			
+		   return "1";
+		}
+		
+		catch(Exception e)
+		{
+			tx.rollback();
+			return e.getMessage();
+		}
+		
+		finally
+		{
+			session.close();
+		}
+
+		
+	}
 }
