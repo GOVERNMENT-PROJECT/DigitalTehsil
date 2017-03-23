@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="MainApp">
+
+  <head>
+    
+    <script src="https://code.angularjs.org/1.3.0/angular.js"></script>
+    <script src="https://code.angularjs.org/1.3.0/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     
+    <link href="login.css" rel="stylesheet">
+   
+  </head>
+
+
+  <body>
+  
+  
+  
+  
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">E-Tehsil</a>
+        </div>
+    
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+  			      <ul id="login-dp" class="dropdown-menu">
+  				      <li>
+      					  <div class="row">
+      							<div class="col-md-12">
+      								<h3>Login Here!</h3>
+      							
+      								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+      									  <div class="form-group">
+      										  <label>Email address</label>
+      											<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+      									    <label>Password</label>
+      											<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                            <div class="help-block text-right"> <a href="">Forget the password ?</a> </div>
+  										      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+  										    </div>
+  								     </form>
+  							     </div>
+  					       </div>
+  	  	        </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="container-fluid">
+		<div class="row">
+			
+			<div class="col-md-12">
+				<div class = "modal-dialog jumbotron" style="box-shadow:3px 3px 3px  #888888;border-radius:5px" >
+					
+					<div calss = "modal-content"> 
+						<!--<div class = "modal-header" style="text-shadow:1px 1px 5px #888888;padding:0px;" >
+							<h1 class = "text-center" style="padding:0px;">Sign-Up</h1>
+						</div>-->
+																	
+						<div class = "modal-body" >
+                			<form name="LoginForm">
+								<div class = "from-group" >
+									<input name="AadharNumber" type="number" class="form-control input-md" placeholder="AadharNumber"  required/><br>
+                    			    <input name="EmailId" type="email" class="form-control input-md" placeholder="Email-Id"  required/><br>
+                    			    <input name="Phone" type="number" class="form-control input-md" placeholder="Phone"  required/><br>
+                    			    <input name="Password" type="password" class="form-control input-md" placeholder="Password" required /><br>
+                    				<input name="Password" type="password" class="form-control input-md" placeholder="Confirm Password" required /><br>
+                    				<input type = "submit" value = "Sign-Up" class = "btn btn-block btn-md btn-primary">
+								</div>  
+							</form>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+  </body>
+</html>
