@@ -41,7 +41,7 @@ public class User {
 		System.out.println("Phone number : " +user.getMobile());
 		System.out.println("aadhaar number : " +user.aadhaarNumber);
 		
-		StatusCode status= new  biz.User().signUp(user);
+		StatusCode status= new  biz.User().login(user);
 		
 		model.Result result=new model.Result();
 		result.setStatus(status.getStatusCode());

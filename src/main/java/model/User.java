@@ -11,6 +11,11 @@ import javax.persistence.Table;
 public class User {
 	
 	@Id
+	@GeneratedValue
+	@Column(name="NumberOfUser")
+	public int NumberOfUser;
+	
+	
 	@Column(name="aadhaarNumber")
 	public String aadhaarNumber = null;
 	
