@@ -4,13 +4,13 @@ showApp.controller('TodoCtrl',["$scope","$http","$log",
   
   function ($scope,$http,$log) {
   $scope.todos = [
-    {aadharNumber:'123456789123', relation:"son", done:false},
-    {aadharNumber:'321654987321', relation:"father", done:false}];
+    {aadhaarNo:'123456789123', realationWithHead:"son", done:false},
+    {aadhaarNo:'321654987321', realationWithHead:"father", done:false}];
     $scope.todoRelation = 'son';
   
   $scope.addTodo = function() {
     if($scope.todoAadhar.length==12 && $scope.todoRelation!=='' ){
-      $scope.todos.push({aadharNumber:$scope.todoAadhar, relation:$scope.todoRelation, done:false});
+      $scope.todos.push({aadhaarNo:$scope.todoAadhar, realationWithHead:$scope.todoRelation, done:false});
       $scope.todoAadhar = '';
       $scope.todoRelation = 'son';
     }
@@ -37,8 +37,8 @@ showApp.controller('TodoCtrl',["$scope","$http","$log",
   };
   
   $scope.save = function() {
-    var obj = JSON.stringify(todos);
-    $http.post("uri", obj, 
+    var obj = JSON.stringify($scope.todos);
+    $http.post("http://localhost:8080/e-Tehsil/webapp/register/rationcard/111111111119", obj, 
       {	headers: { 'Content-Type': 'application/json' } }).
           then(function mySucces(response) {
 				    $log.log("We are Successful");

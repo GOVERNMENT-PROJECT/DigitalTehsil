@@ -1,0 +1,22 @@
+<div>
+	You are at page 1
+	{{message}}
+</div>
+<div>
+	<form name = "from1" ng-submit="search(user)">
+    	<input type = "search" name = "user" placeholder = "USERNAME" ng-model = "user">
+    	<input type = "submit" value = "search" >
+    </form>
+    
+    <table>
+    	<tr>
+    		<th>Name</th>
+            <th>Language</th>
+        </tr>
+        <tr ng-repeat="repo in product">
+        	<td>{{repo.name}}</td>
+            <td>{{repo.language}}</td>
+          </tr>
+      </table>
+    
+</div>
