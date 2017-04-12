@@ -10,8 +10,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("register")
-public class Registration {
+@Path("apply")
+public class Applying {
 	
 	@Path("/newborn")
 	@POST
@@ -21,7 +21,7 @@ public class Registration {
 	{
 		System.out.println("Fathers Name : " +newuser.getFathersName());
 		System.out.println("Mothers Name : " +newuser.getMothersName());
-		String s= new  biz.Registration().newBornRegistration(newuser);
+		String s= new  biz.Applying().newBornRegistration(newuser).toString();
 		return s;
 		
 	}
@@ -41,7 +41,7 @@ public class Registration {
 			
 		}
 		System.out.println("id : " +id);
-		String s= new  biz.Registration().rationCardRegistration(rationcarddetail,id);
+		String s= new  biz.Applying().rationCardRegistration(rationcarddetail,id).toString();
 		return s;
 		
 	}
@@ -55,7 +55,7 @@ public class Registration {
 	{
 		
 		System.out.println("id : " +id);
-		String s= new  biz.Registration().casteCertificateRegistration(cz, id);
+		String s= new  biz.Applying().casteCertificateRegistration(cz, id).toString();
 		return s;
 		
 	}
@@ -69,29 +69,23 @@ public class Registration {
 	{
 		
 		System.out.println("id : " +id);
-		String s= new  biz.Registration().domicileCertificateRegistration(cz, id);
+		String s= new  biz.Applying().domicileCertificateRegistration(cz, id).toString();
 		return s;
 		
 	}
 	
-	/*
 	
 	
-	@Path("/newborn")
+	
+	@Path("/identitycertificate/{Id}")
 	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public dal.SampleOutput newBornRegister(dal.NewBorn newBorn)
+	public model.User identityCertificate(@PathParam("Id") String id)
 	{
-		System.out.println("Fathers Name : " +newBorn.getFathersName());
-		System.out.println("Mothers Name : " +newBorn.getMothersName());
-		System.out.println("asd : " +newBorn);
 		
-		dal.SampleOutput so = new dal.SampleOutput();
-		so.code = "200";
-		so.message = "Your success code : ";
-		return so;
+		System.out.println("id : " +id);
+		return new biz.Applying().identityCertificateRegistering(id);
 		
 	}
-        */
+        
 }
