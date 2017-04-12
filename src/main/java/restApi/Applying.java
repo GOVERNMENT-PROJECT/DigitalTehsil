@@ -16,13 +16,14 @@ public class Applying {
 	@Path("/newborn")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_PLAIN)
-	public String newBornRegister(model.NewBorn newuser)
+	@Produces(MediaType.APPLICATION_JSON)
+	public model.Result newBornRegister(model.NewBorn newuser)
 	{
 		System.out.println("Fathers Name : " +newuser.getFathersName());
 		System.out.println("Mothers Name : " +newuser.getMothersName());
-		String s= new  biz.Applying().newBornRegistration(newuser).toString();
-		return s;
+		model.Result result=new model.Result();
+		result.setStatus(new  biz.Applying().newBornRegistration(newuser).getStatusCode());
+		return result;
 		
 	}
 	
@@ -30,8 +31,8 @@ public class Applying {
 	@Path("/rationcard/{Id}")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_PLAIN)
-	public String rationCardRegister(@PathParam("Id") String id,ArrayList<model.FamilyDetail> rationcarddetail)
+	@Produces(MediaType.APPLICATION_JSON)
+	public model.Result rationCardRegister(@PathParam("Id") String id,ArrayList<model.FamilyDetail> rationcarddetail)
 	{
 		System.out.println("size : " +rationcarddetail.size());
 		for(model.FamilyDetail rationcard : rationcarddetail)
@@ -41,8 +42,9 @@ public class Applying {
 			
 		}
 		System.out.println("id : " +id);
-		String s= new  biz.Applying().rationCardRegistration(rationcarddetail,id).toString();
-		return s;
+		model.Result result = new model.Result();
+		result.setStatus(new  biz.Applying().rationCardRegistration(rationcarddetail,id).getStatusCode());
+		return result;
 		
 	}
 	
@@ -50,13 +52,14 @@ public class Applying {
 	@Path("/castecertificate/{Id}")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_PLAIN)
-	public String casteRegister(@PathParam("Id") String id,model.CasteCertificate cz)
+	@Produces(MediaType.APPLICATION_JSON)
+	public model.Result casteRegister(@PathParam("Id") String id,model.CasteCertificate cz)
 	{
 		
 		System.out.println("id : " +id);
-		String s= new  biz.Applying().casteCertificateRegistration(cz, id).toString();
-		return s;
+		model.Result result=new model.Result();
+		result.setStatus( new  biz.Applying().casteCertificateRegistration(cz, id).getStatusCode());
+		return result;
 		
 	}
 	
@@ -64,13 +67,15 @@ public class Applying {
 	@Path("/domicilecertificate/{Id}")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_PLAIN)
-	public String domicileRegister(@PathParam("Id") String id,model.DomicileCertificate cz)
+	@Produces(MediaType.APPLICATION_JSON)
+	public model.Result domicileRegister(@PathParam("Id") String id,model.DomicileCertificate cz)
 	{
 		
 		System.out.println("id : " +id);
-		String s= new  biz.Applying().domicileCertificateRegistration(cz, id).toString();
-		return s;
+		model.Result result = new model.Result();
+		
+		result.setStatus( new  biz.Applying().domicileCertificateRegistration(cz, id).getStatusCode());
+		return result;
 		
 	}
 	
@@ -80,7 +85,7 @@ public class Applying {
 	@Path("/identitycertificate/{Id}")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	public model.User identityCertificate(@PathParam("Id") String id)
+	public model.AadhaarDetail identityCertificate(@PathParam("Id") String id)
 	{
 		
 		System.out.println("id : " +id);

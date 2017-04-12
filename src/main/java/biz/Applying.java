@@ -141,22 +141,20 @@ public class Applying {
 		
 	}
 	
-	public model.User identityCertificateRegistering(String id) {
+	public model.AadhaarDetail identityCertificateRegistering(String id) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		Query query=null;
 		String hql =null;
-		model.User u =new model.User();
+		model.AadhaarDetail u =new model.AadhaarDetail();
 		try {
 			
-			hql = "FROM User E WHERE  E.aadhaarNumber= :useraadhaarNumber";
-				 query = session.createQuery(hql);
-				query.setParameter("useraadhaarNumber", id);
-			 u = (model.User)query.uniqueResult();
+			hql = "FROM AadhaarDetail E WHERE  E.AadhaarNumber= :useraadhaarNumber";
+			query = session.createQuery(hql);
+			query.setParameter("useraadhaarNumber", id);
+			u = (model.AadhaarDetail)query.uniqueResult();
 			session.getTransaction().commit();
-
-		    
-			return u;
+		    return u;
 		}
 
 		catch (Exception e) 
