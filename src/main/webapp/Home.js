@@ -9,8 +9,20 @@ angular.module('HomeApp', ['ngRoute', 'ngCookies'])
 				templateUrl : "HtmlFile/RationCard.html",
 				controller : "RationCardCtrl"
 			})
-			.when('/Result', {
-				templateUrl : "HtmlFile/Success.html"
+			.when('/BirthCertificate', {
+				templateUrl : "HtmlFile/BirthCertificate.html"
+				
+			})
+			.when('/DeathCertificate', {
+				templateUrl : "HtmlFile/DeathCertificate.html"
+				
+			})
+			.when('/CasteCertificate', {
+				templateUrl : "HtmlFile/CasteCertificate.html"
+				
+			})
+			.when('/DomicileCertificate', {
+				templateUrl : "HtmlFile/DomicileCertificate.html"
 				
 			})
 			.when('/logout', {
