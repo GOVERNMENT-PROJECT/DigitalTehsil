@@ -1,5 +1,5 @@
-	<body  ng-app="header" style="background-color:#cccccc">
-		<div ng-controller="LogoutCtrl">
+	<div style="background-color:#cccccc">
+		<div >
 		<nav class="navbar navbar-full navbar-inverse navbar-static-top" role="navigation">
       		<div class="container-fluid">
         		<div class="navbar-header">
@@ -14,21 +14,12 @@
         		<div class="collapse navbar-collapse" id="top">
       	    		<ul class="nav navbar-nav navbar-right">
           				<li><a href="#Forms"><input type="button" value="Forms" class="btn btn-link"></a></li>
-          				<li><a href="#User"><input type="button" value="{{id}}" class="btn btn-link"></a></li>
-          				<li><a href=""><input type="submit" value="Logout" class="btn btn-link" ng-click="logout()"></a></li>
+          				<li><a href="#User">{{id}}</a></li>
+          				<li><a href="#logout"><input type="button" value="Logout" class="btn btn-link"></a></li>
           			</ul>
         		</div>
       		</div>
     	</nav>
     	</div>
-    	</body>
-  <script>
- angular.module('header',[])
-	.controller('LogoutCtrl', function($scope, $cookies) {
-		$scope.logout = function(){
-		$cookies.remove("LoginId");
-		window.location="/e-Tehsil/index.html#/signup";
-		};
-	}); 
- </script>
+    	</div>
     	

@@ -9,6 +9,14 @@ angular.module('HomeApp', ['ngRoute', 'ngCookies'])
 				templateUrl : "HtmlFile/RationCard.html",
 				controller : "RationCardCtrl"
 			})
+			.when('/Result', {
+				templateUrl : "HtmlFile/Success.html"
+				
+			})
+			.when('/logout', {
+				template : " ",
+				controller : "LogoutCtrl"
+			})
 			.otherwise({
 				redirectTo : '/Forms'
 			});

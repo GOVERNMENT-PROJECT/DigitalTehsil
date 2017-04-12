@@ -1,5 +1,5 @@
 angular.module('HomeApp')
-	.controller('RationCardCtrl', function ($scope,$http,$log) {
+	.controller('RationCardCtrl', function ($scope,$http,$log, $cookies) {
 		$scope.todos = [];
 		 // {aadhaarNo:'123456789123', realationWithHead:"son", done:false},
 	     // {aadhaarNo:'321654987321', realationWithHead:"father", done:false }];
@@ -36,13 +36,14 @@ angular.module('HomeApp')
 	  
 	  $scope.save = function() {
 	    var obj = JSON.stringify($scope.todos);
-	    $http.post("http://localhost:8080/e-Tehsil/webapp/register/rationcard/"+$cookies.get("LoginId"), obj, 
+	    $http.post("http://localhost:8080/e-Tehsil/webapp/apply/rationcard/"+$cookies.get("LoginId"), obj, 
 	      {	headers: { 'Content-Type': 'application/json' } }).
 	          then(function mySucces(response) {
 					    $log.log("We are Successful");
 							$log.log(response);
 							$log.log(response.data);
 							$scope.myWelcome = response.data;
+							window.location="/e-Tehsil/HtmlFile/Success.html";
 						}, 
 								
 						function myError(response) {
