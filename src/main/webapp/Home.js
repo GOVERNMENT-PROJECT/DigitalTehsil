@@ -1,12 +1,16 @@
 angular.module('HomeApp', ['ngRoute', 'ngCookies'])
 	.config(function($routeProvider){
 		$routeProvider
-			.when('/Home', {
-				templateUrl : "HtmlFile/Home1.html",
-				controller : "HomeCtrl"
+			.when('/Forms', {
+				templateUrl : "HtmlFile/Forms/Forms.html",
+				controller : "FormsCtrl"
+			})
+			.when('/RationCard', {
+				templateUrl : "HtmlFile/RationCard.html",
+				controller : "RationCardCtrl"
 			})
 			.otherwise({
-				redirectTo : '/Home'
+				redirectTo : '/Forms'
 			});
 		//$locationProvider.html5Mode(true);
 	});

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="HomeApp">
+<html >
 	<head>
 		<title>E-tehsil</title>
 		
@@ -14,15 +14,23 @@
     	<script src = "./AngularFile/angular.min.js"></script>
 		<script src = "./AngularFile/angular-route.js"></script>
 		<script src = "./AngularFile/angular-cookies.js"></script> 
-		<!-- <script data-require="angular-cookies@*" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular-cookies.js"></script>
-   			-->
+		
+		
 		<script src = "./Home.js"></script>
-		<script src = "./controller/HomeCtrl.js"></script>
+		<script src = "./controller/FormsCtrl.js"></script>
+		<script src = "./controller/RationCard.js"></script>
+		<script src = "./controller/Logout.js"></script>
 		
 	</head>
 	
-	<body>
+	<body style="background-color:#cccccc">
+	
+		<div ng-include="'HtmlFile/Header/Header.html'"></div>
 		
+		<div ng-app="HomeApp">
 		<div ng-view></div>
+		</div>
+		
+		<div ng-include="'HtmlFile/Footer/Footer.html'"></div>
 	</body>
 </html>

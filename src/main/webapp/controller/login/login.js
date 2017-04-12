@@ -1,5 +1,5 @@
 angular.module('MainApp')
-	.controller('LoginCtrl', function($scope, $http, $log, $location) {	
+	.controller('LoginCtrl', function($scope, $http, $log, $location, $cookies) {	
 		$scope.Login = function(){
 			$scope.User={};
 			$scope.User={
@@ -15,7 +15,7 @@ angular.module('MainApp')
 						$log.log(response.data);
 						if(response.data === 1){
 							$cookies.put("LoginId", $scope.User.aadhaarNumber);
-							window.location="/e-Tehsil/Home.html";
+							window.location="/e-Tehsil/Home1.html";
 						}
 						else{
 							$log.log("can't register now! databse problem.");

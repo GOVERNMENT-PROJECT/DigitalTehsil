@@ -1,5 +1,5 @@
 angular.module('MainApp')
-	.controller('LoginCtrl', function($scope, $http, $log, $location, $cookies, $cookieStore) {
+	.controller('SignUpCtrl', function($scope, $http, $log, $location, $cookies, $cookieStore) {
 		$scope.SignUp = function(){
 			$scope.User={};
 			$scope.User={
@@ -16,7 +16,8 @@ angular.module('MainApp')
 					    $log.log("We are Successful");
 						$log.log(response);
 						$log.log(response.data);
-						if(response.data === 1){
+						$log.log(response.data.status);
+						if(response.data.status == 1){
 							$cookies.put("LoginId", $scope.User.aadhaarNumber);
 							window.location="/e-Tehsil/Home.html";
 						}

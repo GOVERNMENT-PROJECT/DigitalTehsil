@@ -1,0 +1,34 @@
+	<body  ng-app="header" style="background-color:#cccccc">
+		<div ng-controller="LogoutCtrl">
+		<nav class="navbar navbar-full navbar-inverse navbar-static-top" role="navigation">
+      		<div class="container-fluid">
+        		<div class="navbar-header">
+          			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top">
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+          			</button>
+          			<a class="navbar-brand" href="#"><strong><i>E-Tehsil</i></strong></a>
+        		</div>
+    
+        		<div class="collapse navbar-collapse" id="top">
+      	    		<ul class="nav navbar-nav navbar-right">
+          				<li><a href="#Forms"><input type="button" value="Forms" class="btn btn-link"></a></li>
+          				<li><a href="#User"><input type="button" value="{{id}}" class="btn btn-link"></a></li>
+          				<li><a href=""><input type="submit" value="Logout" class="btn btn-link" ng-click="logout()"></a></li>
+          			</ul>
+        		</div>
+      		</div>
+    	</nav>
+    	</div>
+    	</body>
+  <script>
+ angular.module('header',[])
+	.controller('LogoutCtrl', function($scope, $cookies) {
+		$scope.logout = function(){
+		$cookies.remove("LoginId");
+		window.location="/e-Tehsil/index.html#/signup";
+		};
+	}); 
+ </script>
+    	
