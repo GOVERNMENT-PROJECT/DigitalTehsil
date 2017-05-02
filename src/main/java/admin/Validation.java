@@ -8,7 +8,7 @@ public class Validation {
 	{
 		util.StatusCode statuscode =  StatusCode.Error;
 		
-		if(admin.getEmailId().equals("shiva")  && admin.getPassword().equals("123"))
+		if(admin.getEmailId().equals("shiva@gmail.com")  && admin.getPassword().equals("123"))
 		{
 			statuscode= StatusCode.Success;
 			return statuscode;

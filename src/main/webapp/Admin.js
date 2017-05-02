@@ -2,7 +2,7 @@ angular.module('AdminApp', ['ngRoute', 'ngCookies'])
 	.config(function($routeProvider){
 		$routeProvider
 			.when('/login', {
-				templateUrl : "HtmlFile/login/login.html",
+				templateUrl : "Admin/Html/login.html",
 				controller : "LoginCtrl"
 			})
 			.otherwise({

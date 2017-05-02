@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="AdminHomeApp">
+	<head>
+		<title>E-tehsil</title>
+		
+		<link type = "text/css"		rel = "stylesheet"		href = "Bootstrap/css/bootstrap.css">
+		<link type = "text/css"		rel = "stylesheet"		href = "Bootstrap/css/bootstrap.min.css">
+    	<link type = "text/css"		rel = "stylesheet"		href = "Bootstrap/css/bootstrap-theme.css">
+    	<link type = "text/css"		rel = "stylesheet"		href = "Bootstrap/css/bootstrap-theme.min.css">
+    	
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	
+    	<script src = "./AngularFile/angular.min.js"></script>
+		<script src = "./AngularFile/angular-route.js"></script>
+		<script src = "./AngularFile/angular-cookies.js"></script> 
+		
+		<script src = "./AdminHome.js"></script>
+		<script src = "./Admin/Controller/RationCard.js"></script>
+		<script src = "./Admin/Controller/LogoutCtrl.js"></script>
+		
+	</head>
+	
+	<body style="background-color:#cccccc">
+	
+		<div ng-include="'HtmlFile/Header/Header.html'"></div>
+		
+		
+		<div ng-view></div>
+		
+		
+		<div ng-include="'HtmlFile/Footer/Footer.html'"></div>
+	</body>
+</html>

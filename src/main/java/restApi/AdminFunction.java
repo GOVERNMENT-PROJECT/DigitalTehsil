@@ -21,8 +21,8 @@ public class AdminFunction {
 	@Produces(MediaType.APPLICATION_JSON)
 	public model.Result newRegistration(model.User admin)
 	{
-		System.out.println("Phone number : " +admin.getEmailId());
-		System.out.println("aadhaar number : " +admin.getPassword());
+		System.out.println("Email-Id : " +admin.getEmailId());
+		System.out.println("Password : " +admin.getPassword());
 		
 		StatusCode status= new  admin.Validation().checkAdminValidation(admin);
 		
