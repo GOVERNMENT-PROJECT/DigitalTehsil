@@ -24,6 +24,28 @@ public class DomicileCertificate {
 	
 	@Column(name="DateOfApplying")
 	public Date dateOfApplying;
+	
+	@Column(name="DateOfApproval")
+	public Date dateOfApproval;
+	
+	@Column(name="Approval")
+	public int approval;
+
+	public Date getDateOfApproval() {
+		return dateOfApproval;
+	}
+
+	public void setDateOfApproval(Date dateOfApproval) {
+		this.dateOfApproval = dateOfApproval;
+	}
+
+	public int getApproval() {
+		return approval;
+	}
+
+	public void setApproval(int approval) {
+		this.approval = approval;
+	}
 
 	public String getAadharNo() {
 		return aadharNo;

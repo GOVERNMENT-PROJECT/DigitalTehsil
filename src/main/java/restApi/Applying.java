@@ -17,7 +17,7 @@ public class Applying {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public model.Result newBornRegister(model.NewBorn newuser)
+	public model.Result newBornRegister(model.BirthCertificate newuser)
 	{
 		System.out.println("Fathers Name : " +newuser.getFathersName());
 		System.out.println("Mothers Name : " +newuser.getMothersName());
@@ -83,7 +83,7 @@ public class Applying {
 	
 	
 	@Path("/identitycertificate/{Id}")
-	@POST
+	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public model.AadhaarDetail identityCertificate(@PathParam("Id") String id)
 	{

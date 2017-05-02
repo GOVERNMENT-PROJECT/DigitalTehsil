@@ -9,13 +9,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="newborn")
-public class NewBorn
+@Table(name="BirthCertificate")
+public class BirthCertificate
 { 
 	@Id
 	@GeneratedValue
-	@Column(name="newBornId")
-	public int newBornId;
+	@Column(name="CertificateNo")
+	public int certificateNo;
+	
+	@Column(name="DateOfApplying")
+	public Date dateOfApplying ;
+	
+	@Column(name="DateOfApproval")
+	public Date dateOfApproval ;
+	
 	
 	@Column(name="fathersName")
 	public String fathersName = null;
@@ -41,12 +48,28 @@ public class NewBorn
 	@Column(name="dateOfBirth")
 	public Date dateOfBirth=null;
 	
-	public int getNewBornId() {
-		return newBornId;
+	@Column(name="Approval")
+	public int approval;
+	
+	public int getCertificateNo() {
+		return certificateNo;
 	}
-	public void setNewBornId(int newBornId) {
-		this.newBornId = newBornId;
+	public void setCertificateNo(int certificateNo) {
+		this.certificateNo = certificateNo;
 	}
+	public Date getDateOfApplying() {
+		return dateOfApplying;
+	}
+	public void setDateOfApplying(Date dateOfApplying) {
+		this.dateOfApplying = dateOfApplying;
+	}
+	public Date getDateOfApproval() {
+		return dateOfApproval;
+	}
+	public void setDateOfApproval(Date dateOfApproval) {
+		this.dateOfApproval = dateOfApproval;
+	}
+	
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
@@ -94,6 +117,12 @@ public class NewBorn
 	}
 	public void setPlaceOfBirth(String placeOfBirth) {
 		this.placeOfBirth = placeOfBirth;
+	}
+	public int getApproval() {
+		return approval;
+	}
+	public void setApproval(int approval) {
+		this.approval = approval;
 	}
 	
 }

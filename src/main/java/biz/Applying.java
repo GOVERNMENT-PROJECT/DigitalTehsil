@@ -10,7 +10,7 @@ import util.StatusCode;
 
 public class Applying {
 
-	public util.StatusCode newBornRegistration(model.NewBorn newuser)
+	public util.StatusCode newBornRegistration(model.BirthCertificate newuser)
 	{
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx=session.beginTransaction();

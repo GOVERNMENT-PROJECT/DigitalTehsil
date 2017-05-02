@@ -22,8 +22,33 @@ public class CasteCertificate {
 	@Column(name="CertificateNo")
 	public int certificateNo;
 	
+	@Column(name="Approval")
+	public int approval;
+
 	@Column(name="DateOfApplying")
 	public Date dateOfApplying;
+	
+	@Column(name="DateOfApproval")
+	public Date dateOfApproval;
+    
+	@Column(name="Caste")
+	public String caste;
+	
+	public int getApproval() {
+		return approval;
+	}
+
+	public void setApproval(int approval) {
+		this.approval = approval;
+	}
+	
+	public Date getDateOfApproval() {
+		return dateOfApproval;
+	}
+
+	public void setDateOfApproval(Date dateOfApproval) {
+		this.dateOfApproval = dateOfApproval;
+	}
 
 	public String getAadharNo() {
 		return aadharNo;
