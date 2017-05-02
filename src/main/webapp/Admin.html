@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="AdminApp">
+	<head>
+		<title>E-tehsil</title>
+		
+		<link type = "text/css"		rel = "stylesheet"		href = "Bootstrap/css/bootstrap.css">
+		<link type = "text/css"		rel = "stylesheet"		href = "Bootstrap/css/bootstrap.min.css">
+    	<link type = "text/css"		rel = "stylesheet"		href = "Bootstrap/css/bootstrap-theme.css">
+    	<link type = "text/css"		rel = "stylesheet"		href = "Bootstrap/css/bootstrap-theme.min.css">
+    	
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	
+    	<script src = "./AngularFile/angular.min.js"></script>
+		<script src = "./AngularFile/angular-route.js"></script>
+		<script src = "./AngularFile/angular-cookies.js"></script>
+		
+		<script src = "./Admin.js"></script>
+		<script src = "./controller/login/login.js"></script>
+		<script src = "./controller/signup/signup.js"></script>
+    	
+	</head>
+	
+	<body style="background-color:#cccccc">
+	
+		<nav class="navbar navbar-full navbar-inverse navbar-static-top" role="navigation">
+      		<div class="container-fluid">
+        		<div class="navbar-header">
+          			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top">
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+          			</button>
+          			<a class="navbar-brand" href="#"><strong><i>E-Tehsil</i></strong></a>
+        		</div>
+    
+        		<div class="collapse navbar-collapse" id="top">
+      	    		<ul class="nav navbar-nav navbar-right">
+          				<li><a href="#login"><input type="button" value="Login" class="btn btn-info"></a></li>
+          				
+          			</ul>
+        		</div>
+      		</div>
+    	</nav>
+    	
+    	<div class="container">
+    		<h1 style="text-align : center;"><b>Admin Login Section</b></h1>
+	    	<div class="row">
+		    	<div class="col-sm-4 text">
+		  			<h1><strong><i>Digital Tehsil</i></strong></h1>
+		  			<p>All tehsil work is in your hand. a tension free and coruption free tehsil</p>
+				</div>
+				
+		    	<div ng-view></div>
+		   
+		    </div>
+	    </div>
+	    	
+	    <div class="container-fluid" style="background-color:#222;color:#fff;">
+	    	<table class="table">
+	    		<tr>
+	    			<td><p><img src="background.jpg" class="img-circle" alt="Cinque Terre" width="100" height="100"></p><p>Ashish prasad ranjan</p></td>
+	    			<td><p><img src="background.jpg" class="img-circle" alt="Cinque Terre" width="100" height="100"></p><p>Ashish prasad ranjan</p></td>
+	    			<td><p><img src="background.jpg" class="img-circle" alt="Cinque Terre" width="100" height="100"></p><p>Ashish prasad ranjan</p></td>
+	    		</tr>
+	    	</table>
+			<p class="text-center" style="padding-top:15px;">&copy;Copyright Protected : Oak Art</p>
+		</div>	
+	
+	</body>
+</html>
