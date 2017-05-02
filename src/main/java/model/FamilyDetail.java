@@ -1,5 +1,7 @@
 package model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;
@@ -19,6 +21,15 @@ public class FamilyDetail {
 	@Id
 	@Column(name="FamilyMemberAadhaarNo")
 	public String aadhaarNo;
+	
+	@Column(name="DateOfApproval")
+	public Date dateOfApproval;
+	
+	@Column(name="DateOfApplying")
+	public Date dateOfApplying;
+	
+	@Column(name="Approval")
+	public int approval;
 	
 	@Column(name="FamilyMemberRelation")
 	public String realationWithHead;
@@ -45,6 +56,30 @@ public class FamilyDetail {
 
 	public void setRealationWithHead(String realationWithHead) {
 		this.realationWithHead = realationWithHead;
+	}
+
+	public Date getDateOfApproval() {
+		return dateOfApproval;
+	}
+
+	public void setDateOfApproval(Date dateOfApproval) {
+		this.dateOfApproval = dateOfApproval;
+	}
+
+	public Date getDateOfApplying() {
+		return dateOfApplying;
+	}
+
+	public void setDateOfApplying(Date dateOfApplying) {
+		this.dateOfApplying = dateOfApplying;
+	}
+
+	public int getApproval() {
+		return approval;
+	}
+
+	public void setApproval(int approval) {
+		this.approval = approval;
 	}
 	
 	

@@ -26,7 +26,7 @@ public class CertificateApproval {
 		for(model.CasteCertificate castecertificate: castecertificates )
 		{
 			Transaction tx=session.beginTransaction();
-			//castecertificate.setDateOfApproval(c.getTime().);
+			castecertificate.setDateOfApproval(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
 			castecertificate.setApproval(1);
 			session.update(castecertificate);
 			tx.commit();
@@ -63,7 +63,7 @@ public class CertificateApproval {
 		for(model.DomicileCertificate domicilecertificate: domocilecertificates )
 		{
 			Transaction tx=session.beginTransaction();
-			//castecertificate.setDateOfApproval(c.getTime().);
+			domicilecertificate.setDateOfApproval(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
 			domicilecertificate.setApproval(1);
 			session.update(domicilecertificate);
 			tx.commit();
@@ -100,9 +100,46 @@ public class CertificateApproval {
 		for(model.BirthCertificate birthcertificate: birthcertificates )
 		{
 			Transaction tx=session.beginTransaction();
-			//castecertificate.setDateOfApproval(c.getTime().);
+			birthcertificate.setDateOfApproval(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
 			birthcertificate.setApproval(1);
 			session.update(birthcertificate);
+			tx.commit();
+		}
+		
+		status=StatusCode.Success;
+		return status;
+		
+		}
+		
+		catch(Exception e)
+		{
+			status=StatusCode.UnknownError;
+			return status;
+		}
+		
+		finally
+		{
+			session.close();
+		}
+	}
+	
+	
+	public util.StatusCode rationCardAprroval(ArrayList<model.FamilyDetail> rationcards)
+	{
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		StatusCode status = StatusCode.UnknownError;
+		Calendar c;
+		
+		try
+		{
+			
+		
+		for(model.FamilyDetail rationcard: rationcards )
+		{
+			Transaction tx=session.beginTransaction();
+			rationcard.setDateOfApproval(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+			rationcard.setApproval(1);
+			session.update(rationcard);
 			tx.commit();
 		}
 		

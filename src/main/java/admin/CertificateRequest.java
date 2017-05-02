@@ -48,7 +48,7 @@ public class CertificateRequest {
 		try
 		{		
 			session.beginTransaction();
-			Query query=session.createQuery("FROM CasteCertificate C WHERE C.approval=-1");
+			Query query=session.createQuery("FROM BirthCertificate C WHERE C.approval=-1");
 			birthcertificates = (ArrayList<model.BirthCertificate>) query.list();
 		
 		    return birthcertificates;
@@ -74,7 +74,7 @@ public class CertificateRequest {
 		try
 		{		
 			session.beginTransaction();
-			Query query=session.createQuery("FROM CasteCertificate C WHERE C.approval=-1");
+			Query query=session.createQuery("FROM DomicileCertificate C WHERE C.approval=-1");
 			domocilecertificates = (ArrayList<model.DomicileCertificate>) query.list();
 		
 		    return domocilecertificates;
@@ -84,6 +84,33 @@ public class CertificateRequest {
 		catch(Exception e)
 		{
 			return domocilecertificates;
+		}
+		
+		finally
+		{
+			session.close();
+		}
+	}
+	
+	
+	public ArrayList<model.FamilyDetail> rationCardRequest()
+	{
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		ArrayList<model.FamilyDetail> rationcards = null;
+		
+		try
+		{		
+			session.beginTransaction();
+			Query query=session.createQuery("FROM FamilyDetail C WHERE C.approval=-1 ");
+			rationcards = (ArrayList<model.FamilyDetail>) query.list();
+		
+		    return rationcards;
+		
+		}
+		
+		catch(Exception e)
+		{
+			return rationcards;
 		}
 		
 		finally
