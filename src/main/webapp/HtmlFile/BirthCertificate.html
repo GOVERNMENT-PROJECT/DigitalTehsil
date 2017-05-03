@@ -8,21 +8,27 @@
 		<form ng-submit="SignUp()">
 			<div class = "from-group" >
 				Child Name :
-				<input ng-model="UserAadhaarNumber" type="number" class="form-control" placeholder="AadharNumber"  required/><br>
+				<input ng-model="name" type="text" class="form-control" placeholder="Child Name"  required/><br>
 			    Fathers Name :
-				<input ng-model="UserAadhaarNumber" type="number" class="form-control" placeholder="AadharNumber"  required/><br>
+				<input ng-model="fathersName" type="text" class="form-control" placeholder="Fathers Name"  required/><br>
 			    Mothers Name :
-				<input ng-model="UserAadhaarNumber" type="number" class="form-control" placeholder="AadharNumber"  required/><br>
+				<input ng-model="mothersName" type="text" class="form-control" placeholder="Mothers Name"  required/><br>
 			    Date of Birth :
-				<input ng-model="UserAadhaarNumber" type="number" class="form-control" placeholder="AadharNumber"  required/><br>
+				<input ng-model="dateOfBirth" type="date" class="form-control" placeholder="Date of Birth"  required/><br>
 			    Place of Birth :
-				<input ng-model="UserAadhaarNumber" type="number" class="form-control" placeholder="AadharNumber"  required/><br>
+				<input ng-model="placeOfBirth" type="text" class="form-control" placeholder="Place of Birth"  required/><br>
 			    District :
-				<input ng-model="UserAadhaarNumber" type="number" class="form-control" placeholder="AadharNumber"  required/><br>
-			    Sex :
-				<input ng-model="UserAadhaarNumber" type="number" class="form-control" placeholder="AadharNumber"  required/><br>
-			    
-			    <input type = "submit" value = "Sign-Up" class = "btn btn-block">
+				<select ng-model="district" class="form-control">
+					<option value="Gorakhpur" selected="true">Gorakhpur</option>
+				</select>
+				<br>
+				Sex :
+				<select ng-model="sex" class="form-control">
+					<option value="Male" selected>Male</option>
+					<option value="Female">Female</option>
+				</select>
+			    <br>
+			    <input type = "submit" value = "Register" class = "btn btn-block btn-primary">
 			</div>
 		</form>
 	</div>

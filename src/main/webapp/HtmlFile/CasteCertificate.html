@@ -1,1 +1,37 @@
-caste
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6 form-box wow fadeInUp animated well" style="visibility: visible; animation-name: fadeInUp;">
+	<div class="form-top">
+		<div class="from-top-left"><h3>Birth Certificate Registration Form!</h3></div>
+	</div>
+	<div calss="form-bottom">
+		<form ng-submit="SignUp()">
+			<div class = "from-group" >
+				Child Name :
+				<input ng-model="name" type="text" class="form-control" placeholder="Child Name"  required/><br>
+			    Fathers Name :
+				<input ng-model="fathersName" type="text" class="form-control" placeholder="Fathers Name"  required/><br>
+			    Mothers Name :
+				<input ng-model="mothersName" type="text" class="form-control" placeholder="Mothers Name"  required/><br>
+			    Date of Birth :
+				<input ng-model="dateOfBirth" type="date" class="form-control" placeholder="Date of Birth"  required/><br>
+			    Place of Birth :
+				<input ng-model="placeOfBirth" type="text" class="form-control" placeholder="Place of Birth"  required/><br>
+			    District :
+				<select ng-model="district" class="form-control">
+					<option value="Gorakhpur" selected="true">Gorakhpur</option>
+				</select>
+				<br>
+				Sex :
+				<select ng-model="sex" class="form-control">
+					<option value="Male" selected>Male</option>
+					<option value="Female">Female</option>
+				</select>
+			    <br>
+			    <input type = "submit" value = "Register" class = "btn btn-block btn-primary">
+			</div>
+		</form>
+	</div>
+</div>
+<div class="col-sm-3"></div>
+</div>
