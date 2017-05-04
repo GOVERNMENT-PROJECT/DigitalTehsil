@@ -1,5 +1,5 @@
 angular.module('HomeApp')
-	.controller('RationCardCtrl', function ($scope,$http,$log, $cookies) {
+	.controller('Profile', function ($scope,$http,$log, $cookies) {
 	  $scope.User={};
 	    $http.get("http://localhost:8080/e-Tehsil/webapp/User/profile/"+$cookies.get("LoginId"), 
 	      {	headers: { 'Content-Type': 'application/json' } }).
