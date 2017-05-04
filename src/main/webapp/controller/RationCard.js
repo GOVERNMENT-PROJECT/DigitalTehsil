@@ -48,6 +48,7 @@ angular.module('HomeApp')
 								
 						function myError(response) {
 						  $log.log("Ohh no!");
+						  alert("something went wrong. Re-apply for ration card ")
 						  $scope.myWelcome = response.statusText;
 						}); 
 	    };

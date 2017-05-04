@@ -19,10 +19,13 @@ angular.module('MainApp')
 						}
 						else{
 							$log.log("can't login now! databse problem.");
+							alert("Login Failed!." +
+									" Either Aadhaar Number/Email-id or Password is wrong.")
 							window.location="/e-Tehsil/index.html";
 						}
 					}, 
 					function myError(response) {
+						alert("Server can't be loaded. Please check your network connection.")
 						$log.log("Ohh no!");
 					});
 			};
