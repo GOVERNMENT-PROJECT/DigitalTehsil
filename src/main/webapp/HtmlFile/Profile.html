@@ -1,0 +1,100 @@
+<div>
+
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="panel panel-default">
+			<div calss="panel-body">
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-2">
+						<h4><b>Name :</b></h4>
+					</div>
+					<div class="col-md-4">
+						<h4>{{User.firstName+" "+User.middleName+" "+User.lastName}}</h4>
+					</div>
+				</div>
+			
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-2">
+						<h4><b>Fathers Name :</b></h4>
+					</div>
+					<div class="col-md-4">
+						<h4>{{User.fathersFirstName+" "+User.fathersMiddleName+" "+User.fathersLastName}}</h4>
+					</div>
+				</div>
+			
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-2">
+						<h4><b>Aadhaar Number:</b></h4>
+					</div>
+					<div class="col-md-4">
+						<h4>{{User.aadhaarNumber}}</h4>
+					</div>
+				</div>
+			
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-2">
+						<h4><b>Address :</b></h4>
+					</div>
+					<div class="col-md-4">
+						<h4>{{User.addressLine1}}</h4><br>
+						<h4>{{User.addressLine2}}</h4><br>
+						<h4>{{User.addressLine3}}</h4><br>
+					</div>
+				</div>
+			
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-2">
+						<h4><b>Date Of Birth :</b></h4>
+					</div>
+					<div class="col-md-4">
+						<h4>{{User.dateOfBirth}}</h4>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-2">
+						<h4><b>Sex :</b></h4>
+					</div>
+					<div class="col-md-4">
+						<h4>{{User.sex}}</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+
+	<br>
+	<br>
+	
+	<div class="row">
+	<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div class="panel panel-default">
+				<div calss="panel-body">
+					<table class="table table-hover">
+				        <tbody>
+				          <tr class="active">
+				            <th>Certificate Name</th>
+				           	<th>Certificate Number</th>
+				            <th>Status</th>
+				          </tr>
+				          <tr ng-repeat="repo in User.certi">
+				            <td> {{repo.certificateName}} </td>
+							<td> {{repo.certificateNumber}} </td>
+							<td> {{repo.approval}} </td>
+				          </tr>
+				        </tbody>
+				      </table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

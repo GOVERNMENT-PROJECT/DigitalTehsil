@@ -27,7 +27,7 @@ angular.module('HomeApp', ['ngRoute', 'ngCookies'])
 			})
 			.when('/User', {
 				templateUrl : "HtmlFile/Profile.html",
-				controller : "FormsCtrl"
+				controller : "Profile"
 			})
 			.when('/About', {
 				templateUrl : "HtmlFile/About.html",
