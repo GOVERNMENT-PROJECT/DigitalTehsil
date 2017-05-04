@@ -1,13 +1,14 @@
 <div class="container">
 <div class="row">
-	<div class="col-md-2"></div>
-		<div class="col-md-8">
+	<div class="col-md-1"></div>
+		<div class="col-md-10">
 			<div class="panel panel-default">
 				<div calss="panel-body">
 				<form ng-submit="Save()">
 					<table class="table table-hover">
 				        <tbody>
 				          <tr class="active">
+				          	<th>Certificate Number</th>
 				            <th>Name of Child</th>
 				            <th>Sex</th>
 				            <th>Fathers Name</th>
@@ -18,6 +19,7 @@
 				           	<th colspan="2">Approve/Disapprove</th>
 				          </tr>
 				          <tr ng-repeat="repo in User ">
+				          	 <td> {{repo.certificateNumber}} </td>
 				            <td> {{repo.name}} </td>
 				            <td> {{repo.sex}} </td>
 				            <td> {{repo.fathersName}} </td>
