@@ -19,6 +19,9 @@ public class FamilyDetail {
 	public String id;
 
 	@Id
+	@Column(name="CertificateNo")
+	public int certificateno;
+	
 	@Column(name="FamilyMemberAadhaarNo")
 	public String aadhaarNo;
 	
@@ -80,6 +83,14 @@ public class FamilyDetail {
 
 	public void setApproval(int approval) {
 		this.approval = approval;
+	}
+
+	public int getCertificateno() {
+		return certificateno;
+	}
+
+	public void setCertificateno(int certificateno) {
+		this.certificateno = certificateno;
 	}
 	
 	

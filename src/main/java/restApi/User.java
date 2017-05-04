@@ -48,5 +48,13 @@ public class User {
 		
 		return result;
 	}
+	
+	@Path("/Profile/{id}")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public model.UserProfile login(String id)
+	{
+				return new biz.User().getUserProfile(id);
+	}
 }
 	
