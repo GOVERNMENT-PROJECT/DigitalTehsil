@@ -1,5 +1,5 @@
 angular.module('AdminHomeApp')
-	.controller('RationCardCtrl', function ($scope,$http,$log, $cookies) {
+	.controller('BirthCertificate', function ($scope,$http,$log, $cookies) {
 
 	   $http.get("http://localhost:8080/e-Tehsil/webapp/Admin/BirthCertificateRequest", 
 	      {	headers: { 'Content-Type': 'application/json' } }).

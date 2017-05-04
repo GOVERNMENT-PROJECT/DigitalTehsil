@@ -10,8 +10,8 @@ angular.module('AdminHomeApp', ['ngRoute', 'ngCookies'])
 				controller : "RationCardCtrl"
 			})
 			.when('/BirthCertificate', {
-				templateUrl : "Admin/Html/BirthCertificate.html"
-				
+				templateUrl : "Admin/Html/BirthCertificate.html",
+					controller : "BirthCertificate"
 			})
 			.when('/DeathCertificate', {
 				templateUrl : "HtmlFile/DeathCertificate.html"

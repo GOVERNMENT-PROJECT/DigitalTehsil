@@ -23,7 +23,7 @@ public class FamilyDetail {
 	public int certificateno;
 	
 	@Column(name="FamilyMemberAadhaarNo")
-	public String aadhaarNo;
+	public String aadhaarNo=null;
 	
 	@Column(name="DateOfApproval")
 	public Date dateOfApproval;

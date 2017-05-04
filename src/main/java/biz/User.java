@@ -100,22 +100,27 @@ public class User {
 	public model.UserProfile getUserProfile(String id) 
 	{
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction tx = session.beginTransaction();
+		//Transaction tx = session.beginTransaction();
 		model.UserProfile userprofile=new model.UserProfile();
 		model.CertificateDetail c=new model.CertificateDetail();
 		
 		try {
-			
+			Transaction tx = session.beginTransaction();
 			Query query=session.createQuery("FROM AadhaarDetail A WHERE A.AadhaarNumber=:id");
 			query.setParameter("id", id);
 			userprofile.setUser((model.User) query.uniqueResult());
+			tx.commit();
 			
-			model.FamilyDetail f=null;
-			query=session.createQuery("FROM FamilyDetail A WHERE A.FamilyMemberAadhaarNo=:id");
+			 tx = session.beginTransaction();
+			model.FamilyDetail f=new model.FamilyDetail();
+			query=session.createQuery("FROM FamilyDetail A WHERE A.aadhaarNo=:id");
 			query.setParameter("id", id);
+			System.out.println("111111111f=");
 			f=(model.FamilyDetail) query.uniqueResult();
-			if(f!=null)
+			System.out.println("11111111122222222f="+f);
+			//if(f.getAadhaarNo().length()==12)
 			{
+				System.out.println("f="+f.getAadhaarNo());
 				c.setCertificateNumber(f.getCertificateno());
 				c.setTypeOfCertificate("RationCard");
 				if(f.getApproval()==-1)
@@ -126,7 +131,7 @@ public class User {
 				  c.setApproval("Approved");
 				
 			}
-			
+			tx.commit();
 			userprofile.getCerti().add(c);
 			
 			model.CasteCertificate p=null;
@@ -193,6 +198,7 @@ public class User {
 		}
 
 		catch (Exception e) {
+			e.printStackTrace();
 			return userprofile;
 		}
 
