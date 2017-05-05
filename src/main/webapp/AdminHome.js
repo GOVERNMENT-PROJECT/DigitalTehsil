@@ -3,7 +3,6 @@ angular.module('AdminHomeApp', ['ngRoute', 'ngCookies'])
 		$routeProvider
 			.when('/Forms', {
 				templateUrl : "HtmlFile/Forms/Forms.html",
-				//controller : "FormsCtrl"
 			})
 			.when('/RationCard', {
 				templateUrl : "Admin/Html/RationCard.html",
@@ -12,10 +11,6 @@ angular.module('AdminHomeApp', ['ngRoute', 'ngCookies'])
 			.when('/BirthCertificate', {
 				templateUrl : "Admin/Html/BirthCertificate.html",
 				controller : "BirthCertificate"
-			})
-			.when('/DeathCertificate', {
-				templateUrl : "HtmlFile/DeathCertificate.html"
-				
 			})
 			.when('/CasteCertificate', {
 				templateUrl : "HtmlFile/CasteCertificate.html"
@@ -32,6 +27,12 @@ angular.module('AdminHomeApp', ['ngRoute', 'ngCookies'])
 			.when('/logout', {
 				template : " ",
 				controller : "LogoutCtrl"
+			})
+			.when('/About', {
+				templateUrl : "HtmlFile/About.html",
+			})
+			.when('/User', {
+				templateUrl : "Admin/Html/Profile.html",
 			})
 			.otherwise({
 				redirectTo : '/Forms'

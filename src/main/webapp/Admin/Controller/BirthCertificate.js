@@ -22,12 +22,12 @@ angular.module('AdminHomeApp')
 						$log.log(obj);
 						$log.log(response.data);
 						$scope.User = response.data;
-						window.alert("success reached!");
+						window.alert("successfully updated data!");
 						window.location="AdminHome.html#/Forms";
 					}, 
 					function myError(response) {
 						$log.log("Ohh no!");
-						window.alert("faliure occurs");
+						window.alert("faliure occurs. Please try occurs.");
 						window.location="AdminHome.html#/BirthCertificate";
 					}); 
 	   };

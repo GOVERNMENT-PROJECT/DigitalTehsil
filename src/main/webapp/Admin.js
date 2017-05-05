@@ -1,4 +1,4 @@
-angular.module('AdminApp', ['ngRoute', 'ngCookies'])
+angular.module('AdminApp', ['ngRoute', 'ngCookies', 'ngMessages'])
 	.config(function($routeProvider){
 		$routeProvider
 			.when('/login', {
