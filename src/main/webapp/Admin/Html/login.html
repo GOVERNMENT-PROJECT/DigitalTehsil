@@ -3,11 +3,22 @@
 		<div class="from-top-left"><h2>Login here!</h2></div>
 	</div>
 	<div calss="form-bottom">
-		<form ng-submit="Login()">
+		<form name="userForm" ng-submit="Login()">
 			<div class = "from-group" >
-				<input ng-model="EmailId" type="email" class="form-control" placeholder="Email-Id"  required/><br>
-			    <input ng-model="Password" type="password" class="form-control" placeholder="Password" required /><br>
-			    <!-- <input name="Password" type="password" class="form-control input-md" placeholder="Confirm Password" required /><br>-->
+				
+				<input ng-model="EmailId" name="emailId" type="email" class="form-control" placeholder="Email-Id"  required/>
+				<div class="help-block" style="color: red" ng-messages="userForm.emailId.$error" ng-if="userForm.emailId.$touched">
+				   	<p ng-message="email">*Invalid email format</p>
+				    <p ng-message="required">*Your name is required.</p>
+				</div>
+				<br>
+				
+			    <input ng-model="Password" type="password" name="password" class="form-control" placeholder="Password" required />
+			    <div class="help-block" style="color: red" ng-messages="userForm.password.$error" ng-if="userForm.password.$touched">
+				    <p ng-message="required">*Password is required</p>
+				</div>
+			    <br>
+			    
 			    <input type = "submit" value = "Login" class = "btn btn-block">
 			</div>
 		</form>

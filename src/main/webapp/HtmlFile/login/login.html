@@ -3,11 +3,21 @@
 		<div class="from-top-left"><h3>Login here!</h3></div>
 	</div>
 	<div calss="form-bottom">
-		<form ng-submit="Login()">
+		<form name="userForm" ng-submit="Login()">
 			<div class = "from-group" >
-				<input ng-model="UserAadhaarNumber" type="text" class="form-control" placeholder="AadharNumber/Email-Id"  required/><br>
-			    <input ng-model="UserPassword" type="password" class="form-control" placeholder="Password" required /><br>
-			    <!-- <input name="Password" type="password" class="form-control input-md" placeholder="Confirm Password" required /><br>-->
+				
+				<input ng-model="UserAadhaarNumber" name="aadhaarNumber" type="text" class="form-control" placeholder="AadharNumber/Email-Id" required/>
+				<div class="help-block" style="color: red" ng-messages="userForm.aadhaarNumber.$error" ng-if="userForm.aadhaarNumber.$touched">
+					<p ng-message="required">*Aadhaar Number or Email-ID is required</p>
+				</div>
+				<br>
+				
+			    <input ng-model="UserPassword" name="password" type="password" class="form-control" placeholder="Password" required />
+			    <div class="help-block" style="color: red" ng-messages="userForm.password.$error" ng-if="userForm.password.$touched">
+				    <p ng-message="required">*Password is required</p>
+				</div>
+				<br>
+				
 			    <input type = "submit" value = "Login" class = "btn btn-block btn-primary">
 			</div>
 		</form>

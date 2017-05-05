@@ -10,7 +10,12 @@
 	        	<label class="control-label " for="email">Aadhaar Number*:</label>
 	        	</div>
 	        	<div class="col-md-6">
-	        	<input type="text" class="form-control" ng-model="todoAadhar" placeholder="aadhaar Number"  size ="12" ng-minlength="12" ng-maxlength="12" required>
+	        	<input type="text" class="form-control" name="aadhaarNumber" ng-model="todoAadhar" placeholder="aadhaar Number"  size ="12" ng-minlength="12" ng-maxlength="12" required>
+	     	   	<div class="help-block" style="color: red" ng-messages="RationForm.aadhaarNumber.$error" ng-if="RationForm.aadhaarNumber.$touched">
+				   	<p ng-message="minlength">*Aadhaar Number is too short</p>
+				    <p ng-message="maxlength">*Aadhaar Number is too long</p>
+				    <p ng-message="required">*Aadhaar Number is required</p>
+				</div>
 	     	   	</div>
 	     	   	</div>
 	     	   	<div class="row">

@@ -4,14 +4,41 @@
 		<div class="from-top-left"><h3>Sign-up here!</h3></div>
 	</div>
 	<div calss="form-bottom">
-		<form ng-submit="SignUp()">
+		<form name="userForm" ng-submit="SignUp()">
 			<div class = "from-group" >
-				<input ng-model="UserAadhaarNumber" type="number" class="form-control" placeholder="AadharNumber"  required/><br>
-			    <input ng-model="UserEmailId" type="email" class="form-control" placeholder="Email-Id"  required/><br>
-			    <input ng-model="UserMobile" type="text" class="form-control" placeholder="Phone"  required/><br>
-			    <input ng-model="UserPassword" type="password" class="form-control" placeholder="Password" required /><br>
-			    <!-- <input name="Password" type="password" class="form-control input-md" placeholder="Confirm Password" required /><br>-->
+				 
+				<input ng-model="UserAadhaarNumber" name="aadhaarNumber" type="number" class="form-control" placeholder="AadharNumber" ng-minlength="12" ng-maxlength="12" required/>
+			    <div class="help-block" style="color: red" ng-messages="userForm.aadhaarNumber.$error" ng-if="userForm.aadhaarNumber.$touched">
+				   	<p ng-message="minlength">*Aadhaar Number is too short</p>
+				    <p ng-message="maxlength">*Aadhaar Number is too long</p>
+				    <p ng-message="required">*Aadhaar Number is required</p>
+				</div>
+				<br>
+				
+			    <input ng-model="UserEmailId" name="emailId" type="email" class="form-control" placeholder="Email-Id"  required/>
+			    <div class="help-block" style="color: red" ng-messages="userForm.emailId.$error" ng-if="userForm.emailId.$touched">
+				   	<p ng-message="email">*Invalid email format</p>
+				    <p ng-message="required">*Your name is required.</p>
+				</div>
+				<br>
+				
+			    <input ng-model="UserMobile" name="mobile" type="number" class="form-control" placeholder="Mobile Number" ng-minlength="10" ng-maxlength="10" required/>
+			    <div class="help-block" style="color: red" ng-messages="userForm.mobile.$error" ng-if="userForm.mobile.$touched">
+				   	<p ng-message="minlength">*Mobile Number is too short</p>
+				    <p ng-message="maxlength">*Mobile Number is too long</p>
+				    <p ng-message="required">*Mobile Number is required</p>
+				</div>
+				<br>
+				
+			    <input ng-model="UserPassword" type="password" name="password" class="form-control" placeholder="Password" required />
+			    <div class="help-block" style="color: red" ng-messages="userForm.password.$error" ng-if="userForm.password.$touched">
+				    <p ng-message="required">*Password is required</p>
+				</div>
+				<br>
+				
 			    <input type = "submit" value = "Sign-Up" class = "btn btn-block btn-primary">
+			    
+			    
 			</div>
 		</form>
 	</div>

@@ -1,4 +1,4 @@
-angular.module('MainApp', ['ngRoute', 'ngCookies'])
+angular.module('MainApp', ['ngMessages', 'ngRoute', 'ngCookies'])
 	.config(function($routeProvider){
 		$routeProvider
 			.when('/signup', {
