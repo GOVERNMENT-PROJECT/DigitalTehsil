@@ -23,10 +23,12 @@ angular.module('MainApp')
 						}
 						else if(response.data.status == -1){
 							$log.log("already registered");
+							alert("aadhaar/emailid/phone number already registered");
 							window.location="/e-Tehsil/index.html";
 						}
 						else{
 							$log.log("aadhaar not registered.");
+							alert("aadhaar not registered.");
 							window.location="/e-Tehsil/index.html";
 						}
 					}, 

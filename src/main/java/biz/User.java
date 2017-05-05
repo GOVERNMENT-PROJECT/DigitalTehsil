@@ -15,29 +15,48 @@ public class User {
 	public util.StatusCode signUp(model.User user) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
+		model.AadhaarDetail a=new model.AadhaarDetail();
 		
 		StatusCode status = StatusCode.UnknownError;
 		try {
-			session.save(user);
+			String hql = "FROM AadhaarDetail E WHERE E.AadhaarNumber = :userAadhaarNumber  ";
+			Query query = session.createQuery(hql);
+			query.setParameter("userAadhaarNumber", user.getAadhaarNumber());
+			a=(model.AadhaarDetail) query.uniqueResult();
 			tx.commit();
-			status= StatusCode.Success;
-			return status;
-		}
-
-		catch (ConstraintViolationException  e) {
-			tx.rollback();
-			System.out.println(e.getMessage());
-			status=StatusCode.UnknownError;
-			return status;
+			if(a==null)
+			{
+				return status;
+			}
+			else
+			{
+				try
+				{
+						tx = session.beginTransaction();
+			            session.save(user);
+			            tx.commit();
+			            status= StatusCode.Success;
+			            return status;
+				}
+				
+				catch (Exception  e) 
+				{
+					tx.rollback();
+					e.printStackTrace();
+					status=StatusCode.Error;
+					return status;
+				}
+				
+				
+			}
 		}
 		
 		catch(Exception e)
 		{
-			tx.rollback();
-			System.out.println(e.getMessage());
-			status=StatusCode.Error;
 			return status;
 		}
+
+		
 
 		finally {
 			session.close();

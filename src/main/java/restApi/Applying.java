@@ -49,7 +49,7 @@ public class Applying {
 	}
 	
 	
-	@Path("/castecertificate/{Id}")
+	@Path("/oldpensionform/{Id}")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -65,16 +65,15 @@ public class Applying {
 	
 	
 	@Path("/domicilecertificate/{Id}")
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
+	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public model.Result domicileRegister(@PathParam("Id") String id,model.DomicileCertificate cz)
+	public model.Result domicileRegister(@PathParam("Id") String id)
 	{
 		
 		System.out.println("id : " +id);
 		model.Result result = new model.Result();
 		
-		result.setStatus( new  biz.Applying().domicileCertificateRegistration(cz, id).getStatusCode());
+		result.setStatus( new  biz.Applying().domicileCertificateRegistration( id).getStatusCode());
 		return result;
 		
 	}

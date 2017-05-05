@@ -1,6 +1,7 @@
 package biz;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -18,6 +19,9 @@ public class Applying {
 		
 		try
 		{		
+			newuser.setApproval(-1);
+			newuser.setDateOfApplying(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+			
 		   session.save(newuser);
 		   tx.commit();
 		   status=StatusCode.Success;
@@ -44,16 +48,18 @@ public class Applying {
 		
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction tx=null;
 		StatusCode status = StatusCode.UnknownError;
 		
 		try
 		{
 			for(model.FamilyDetail rationcard : rationcarddetail)
 			{
-				tx=session.beginTransaction();
+				System.out.println("a no="+rationcard.getAadhaarNo());
+				Transaction tx=session.beginTransaction();
 				rationcard.setId(id);
-				session.save(rationcard);
+				rationcard.setApproval(-1);
+				rationcard.setDateOfApplying(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+				System.out.println(session.save(rationcard));
 				tx.commit();
 				
 			}
@@ -63,7 +69,8 @@ public class Applying {
 		
 		catch(Exception e)
 		{
-			tx.rollback();
+			e.printStackTrace();
+			//tx.rollback();
 			return status;
 		}
 		
@@ -86,6 +93,9 @@ public class Applying {
 		try
 		{
 		tx=session.beginTransaction();
+		cz.setApproval(-1);
+		cz.setDateOfApplying(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+		
 				cz.setAadharNo(id);
 				session.save(cz);
 				tx.commit();
@@ -109,17 +119,21 @@ public class Applying {
 	}
 	
 	
-	public util.StatusCode domicileCertificateRegistration(model.DomicileCertificate cz,String id)
+	public util.StatusCode domicileCertificateRegistration(String id)
 	{
 		
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx=null;
 		StatusCode status = StatusCode.UnknownError;
+		model.DomicileCertificate cz=new model.DomicileCertificate();
 		try
 		{
 		tx=session.beginTransaction();
 				cz.setAadharNo(id);
+				cz.setApproval(-1);
+				cz.setDateOfApplying(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+				
 				session.save(cz);
 				tx.commit();
 				

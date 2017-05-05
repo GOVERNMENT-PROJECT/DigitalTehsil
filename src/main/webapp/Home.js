@@ -22,7 +22,8 @@ angular.module('HomeApp', ['ngRoute', 'ngCookies', 'ngMessages'])
 				
 			})
 			.when('/DomicileCertificate', {
-				templateUrl : "HtmlFile/DomicileCertificate.html"
+				templateUrl : "HtmlFile/DomicileCertificate.html",
+				controller : "DomicileCertificate"
 				
 			})
 			.when('/OldAgePension', {

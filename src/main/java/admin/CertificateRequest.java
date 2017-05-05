@@ -102,7 +102,7 @@ public class CertificateRequest {
 		try
 		{		
 			session.beginTransaction();
-			Query query=session.createQuery(" FROM FAMILYDETAIL F WHERE F.approval=-1 ");
+			Query query=session.createQuery(" FROM FamilyDetail F WHERE F.approval=-1 ");
 			rationcards = (ArrayList<model.FamilyDetail>) query.list();
 			
 		    return rationcards;
