@@ -10,7 +10,7 @@
 						<h4><b>Name :</b></h4>
 					</div>
 					<div class="col-md-4">
-						<h4>{{User.firstName+" "+User.middleName+" "+User.lastName}}</h4>
+						<h4>{{User.user.firstName+" "+User.user.middleName+" "+User.user.lastName}}</h4>
 					</div>
 				</div>
 			
@@ -20,7 +20,7 @@
 						<h4><b>Fathers Name :</b></h4>
 					</div>
 					<div class="col-md-4">
-						<h4>{{User.fathersFirstName+" "+User.fathersMiddleName+" "+User.fathersLastName}}</h4>
+						<h4>{{User.user.FathersFirstName+" "+User.user.FathersLastName}}</h4>
 					</div>
 				</div>
 			
@@ -30,7 +30,7 @@
 						<h4><b>Aadhaar Number:</b></h4>
 					</div>
 					<div class="col-md-4">
-						<h4>{{User.aadhaarNumber}}</h4>
+						<h4>{{User.user.aadhaarNumber}}</h4>
 					</div>
 				</div>
 			
@@ -40,9 +40,7 @@
 						<h4><b>Address :</b></h4>
 					</div>
 					<div class="col-md-4">
-						<h4>{{User.addressLine1}}</h4><br>
-						<h4>{{User.addressLine2}}</h4><br>
-						<h4>{{User.addressLine3}}</h4><br>
+						<h4>{{User.user.addressLine1+" "+User.user.addressLine2}}</h4><br>
 					</div>
 				</div>
 			
@@ -52,7 +50,7 @@
 						<h4><b>Date Of Birth :</b></h4>
 					</div>
 					<div class="col-md-4">
-						<h4>{{User.dateOfBirth}}</h4>
+						<h4>{{User.user.dateOfBirth}}</h4>
 					</div>
 				</div>
 				
@@ -62,7 +60,7 @@
 						<h4><b>Sex :</b></h4>
 					</div>
 					<div class="col-md-4">
-						<h4>{{User.sex}}</h4>
+						<h4>{{User.user.sex}}</h4>
 					</div>
 				</div>
 			</div>
@@ -86,7 +84,7 @@
 				            <th>Status</th>
 				          </tr>
 				          <tr ng-repeat="repo in User.certi">
-				            <td> {{repo.certificateName}} </td>
+				            <td> {{repo.typeOfCertificate}} </td>
 							<td> {{repo.certificateNumber}} </td>
 							<td> {{repo.approval}} </td>
 				          </tr>

@@ -26,11 +26,11 @@ public class AadhaarDetail {
 	@Column(name="LastName")
 	public String LastName;
 	
-	@Column(name="FatherFirstName")
-	public String FatherFirstName;
+	@Column(name="FathersFirstName")
+	public String FathersFirstName;
 	
-	@Column(name="FatherLastName")
-	public String FatherLastName;
+	@Column(name="FathersLastName")
+	public String FathersLastName;
 	
 	@Column(name="AddressLine1")
 	public String AddressLine1;
@@ -91,19 +91,19 @@ public class AadhaarDetail {
 	}
 
 	public String getFatherFirstName() {
-		return FatherFirstName;
+		return FathersFirstName;
 	}
 
 	public void setFatherFirstName(String fatherFirstName) {
-		FatherFirstName = fatherFirstName;
+		FathersFirstName = fatherFirstName;
 	}
 
 	public String getFatherLastName() {
-		return FatherLastName;
+		return FathersLastName;
 	}
 
 	public void setFatherLastName(String fatherLastName) {
-		FatherLastName = fatherLastName;
+		FathersLastName = fatherLastName;
 	}
 
 	public String getAddressLine1() {

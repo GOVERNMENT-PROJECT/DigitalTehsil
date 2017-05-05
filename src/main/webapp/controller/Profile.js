@@ -1,7 +1,7 @@
 angular.module('HomeApp')
 	.controller('Profile', function ($scope,$http,$log, $cookies) {
 	  $scope.User={};
-	    $http.get("http://localhost:8080/e-Tehsil/webapp/User/profile/"+$cookies.get("LoginId"), 
+	    $http.get("http://localhost:8080/e-Tehsil/webapp/User/Profile/"+$cookies.get("LoginId"), 
 	      {	headers: { 'Content-Type': 'application/json' } }).
 	          then(function mySucces(response) {
 					    $log.log("We are Successful");

@@ -133,7 +133,7 @@ public class User {
 		//Transaction tx = session.beginTransaction();
 		model.UserProfile userprofile=new model.UserProfile();
 		ArrayList<model.CertificateDetail> cd=new ArrayList<model.CertificateDetail>();
-		model.CertificateDetail c=new model.CertificateDetail();
+		model.CertificateDetail c1=new model.CertificateDetail();
 		System.out.println("id="+id);
 		
 		try {
@@ -154,21 +154,22 @@ public class User {
 			if(f!=null)
 			{
 				System.out.println("f="+f.getAadhaarNo());
-				c.setCertificateNumber(f.getCertificateno());
-				c.setTypeOfCertificate("RationCard");
+				c1.setCertificateNumber(f.getCertificateno());
+				c1.setTypeOfCertificate("RationCard");
 				if(f.getApproval()==-1)
 				{
-					c.setApproval("NotApproved");
+					c1.setApproval("NotApproved");
 				}
 				else
-				  c.setApproval("Approved");
+				  c1.setApproval("Approved");
 				
-				cd.add(c);
+				cd.add(c1);
+				System.out.println("11cd size="+cd.size()+" data="+cd.get(0).getTypeOfCertificate());
 				//userprofile.certi.add(c);
 			}
 			tx.commit();
 			
-			
+			model.CertificateDetail c2=new model.CertificateDetail();
 			model.CasteCertificate p=null;
 			tx = session.beginTransaction();
 			query=session.createQuery("FROM CasteCertificate A WHERE A.aadharNo = :id");
@@ -176,21 +177,23 @@ public class User {
 			p=(model.CasteCertificate) query.uniqueResult();
 			if(p!=null)
 			{
-				c.setCertificateNumber(p.getCertificateNo());
-				c.setTypeOfCertificate("CasteCertificate");
+				c2.setCertificateNumber(p.getCertificateNo());
+				c2.setTypeOfCertificate("CasteCertificate");
 				if(p.getApproval()==-1)
 				{
-					c.setApproval("NotApproved");
+					c2.setApproval("NotApproved");
 				}
 				else
-				  c.setApproval("Approved");
+				  c2.setApproval("Approved");
 				
-				cd.add(c);
-				//userprofile.getCerti().add(c);
+				cd.add(c2);
+				System.out.println("22cd size="+cd.size()+" data="+cd.get(0).getTypeOfCertificate());
+				
 			}
 			
 			tx.commit();
 			
+			model.CertificateDetail c3=new model.CertificateDetail();
 			model.DomicileCertificate u=null;
 			tx = session.beginTransaction();
 			query=session.createQuery("FROM DomicileCertificate A WHERE A.aadhaarNo= :id");
@@ -198,22 +201,24 @@ public class User {
 			u=(model.DomicileCertificate) query.uniqueResult();
 			if(u!=null)
 			{
-				c.setCertificateNumber(u.getCertificateNo());
-				c.setTypeOfCertificate("DomicileCertificate");
+				c3.setCertificateNumber(u.getCertificateNo());
+				c3.setTypeOfCertificate("DomicileCertificate");
 				if(u.getApproval()==-1)
 				{
-					c.setApproval("NotApproved");
+					c3.setApproval("NotApproved");
 				}
 				else
-				  c.setApproval("Approved");
+				  c3.setApproval("Approved");
 				
-				cd.add(c);
-				//userprofile.getCerti().add(c);
+				cd.add(c3);
+				System.out.println("33cd size="+cd.size()+" data at0 ="+cd.get(0).getTypeOfCertificate()
+						+ "data at 1="+cd.get(1).typeOfCertificate);
+				
 			}
 			
 			tx.commit();
 			
-			
+			model.CertificateDetail c4=new model.CertificateDetail();
 			model.BirthCertificate b=null;
 			tx = session.beginTransaction();
 			query=session.createQuery("FROM BirthCertificate A WHERE A.fathersName = :fathername AND A.name = :name");
@@ -222,35 +227,64 @@ public class User {
 			b=(model.BirthCertificate) query.uniqueResult();
 			if(b!=null)
 			{
-				c.setCertificateNumber(b.getCertificateNo());
-				c.setTypeOfCertificate("BirthCertificate");
+				c4.setCertificateNumber(b.getCertificateNo());
+				c4.setTypeOfCertificate("BirthCertificate");
 				if(b.getApproval()==-1)
 				{
-					c.setApproval("NotApproved");
+					c4.setApproval("NotApproved");
 				}
 				else
-				  c.setApproval("Approved");
+				  c4.setApproval("Approved");
 				
-				cd.add(c);
-				//userprofile.getCerti().add(c);
+				cd.add(c4);
+				System.out.println("44cd size="+cd.size()+" data="+cd.get(0).getTypeOfCertificate());
+				
 			}
 			
 			tx.commit();
+		
+
+		
+		model.CertificateDetail c5=new model.CertificateDetail();
+		model.OldPensionForm i=null;
+		tx = session.beginTransaction();
+		query=session.createQuery("FROM OldPensionForm A WHERE A.aadhaarno = :id");
+		query.setParameter("id", id);
+		i=(model.OldPensionForm) query.uniqueResult();
+		if(i!=null)
+		{
+			c5.setCertificateNumber(b.getCertificateNo());
+			c5.setTypeOfCertificate("OldAgePension");
+			if(b.getApproval()==-1)
+			{
+				c5.setApproval("NotApproved");
+			}
+			else
+			  c5.setApproval("Approved");
 			
-			userprofile.setCertificatedetails(cd);
-			return userprofile;
+			cd.add(c5);
+			System.out.println("55cd size="+cd.size()+" data="+cd.get(0).getTypeOfCertificate());
 			
 		}
-
-		catch (Exception e) {
-			e.printStackTrace();
-			return userprofile;
-		}
-
-		finally {
-			session.close();
-			
-		}
-
+		
+		tx.commit();
+		
+		userprofile.setCertificatedetails(cd);
+		return userprofile;
+		
 	}
+	
+
+	catch (Exception e) {
+		e.printStackTrace();
+		return userprofile;
+	}
+
+	finally {
+		session.close();
+		
+	}
+	}
+
+	
 }
