@@ -11,5 +11,8 @@ angular.module('HomeApp')
 					}, 	
 					function myError(response) {
 						$log.log("Ohh no!");
+						alert("something went wrong.");
+						$scope.myWelcome = response.statusText;
+						window.location="/e-Tehsil/Home.html#/Forms";
 					}); 
 });
