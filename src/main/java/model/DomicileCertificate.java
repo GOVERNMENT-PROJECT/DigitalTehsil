@@ -15,7 +15,7 @@ public class DomicileCertificate {
 	
 	
 	@Column(name="AadhaarNo")
-	public String aadharNo;
+	public String aadhaarNo;
 	
 	@Id
 	@GeneratedValue
@@ -48,11 +48,11 @@ public class DomicileCertificate {
 	}
 
 	public String getAadharNo() {
-		return aadharNo;
+		return aadhaarNo;
 	}
 
 	public void setAadharNo(String aadharNo) {
-		this.aadharNo = aadharNo;
+		this.aadhaarNo = aadharNo;
 	}
 
 	public int getCertificateNo() {

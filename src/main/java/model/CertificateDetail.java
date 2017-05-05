@@ -2,27 +2,27 @@ package model;
 
 public class CertificateDetail {
 	
-	public int CertificateNumber;
-	public String TypeOfCertificate;
-	public String Approval;
+	public int certificateNumber;
+	public String typeOfCertificate;
+	public String approval;
 	
 	public int getCertificateNumber() {
-		return CertificateNumber;
+		return certificateNumber;
 	}
-	public void setCertificateNumber(int certificateNumber) {
-		CertificateNumber = certificateNumber;
+	public void setCertificateNumber(int CertificateNumber) {
+		certificateNumber = CertificateNumber;
 	}
 	public String getTypeOfCertificate() {
-		return TypeOfCertificate;
+		return typeOfCertificate;
 	}
-	public void setTypeOfCertificate(String typeOfCertificate) {
-		TypeOfCertificate = typeOfCertificate;
+	public void setTypeOfCertificate(String TypeOfCertificate) {
+		typeOfCertificate = TypeOfCertificate;
 	}
 	public String getApproval() {
-		return Approval;
+		return approval;
 	}
-	public void setApproval(String approval) {
-		Approval = approval;
+	public void setApproval(String Approval) {
+		approval = Approval;
 	} 
 
 }

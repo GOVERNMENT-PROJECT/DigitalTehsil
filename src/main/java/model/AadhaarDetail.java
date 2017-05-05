@@ -46,7 +46,7 @@ public class AadhaarDetail {
 	
 	@Column(name="Sex")
 	public String Sex;
-	
+	/*
 	@Column(name="Photo")
 	public byte[] Photo;
 
@@ -57,7 +57,7 @@ public class AadhaarDetail {
 	public void setPhoto(byte[] photo) {
 		Photo = photo;
 	}
-
+    */
 	public String getAadhaarNumber() {
 		return AadhaarNumber;
 	}

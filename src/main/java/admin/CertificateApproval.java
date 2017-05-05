@@ -27,7 +27,7 @@ public class CertificateApproval {
 		{
 			Transaction tx=session.beginTransaction();
 			castecertificate.setDateOfApproval(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
-			castecertificate.setApproval(1);
+			//castecertificate.setApproval(1);
 			session.update(castecertificate);
 			tx.commit();
 		}
@@ -64,7 +64,7 @@ public class CertificateApproval {
 		{
 			Transaction tx=session.beginTransaction();
 			domicilecertificate.setDateOfApproval(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
-			domicilecertificate.setApproval(1);
+			//domicilecertificate.setApproval(1);
 			session.update(domicilecertificate);
 			tx.commit();
 		}
@@ -101,7 +101,7 @@ public class CertificateApproval {
 		{
 			Transaction tx=session.beginTransaction();
 			birthcertificate.setDateOfApproval(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
-			birthcertificate.setApproval(1);
+			//birthcertificate.setApproval(1);
 			session.update(birthcertificate);
 			tx.commit();
 		}
@@ -138,7 +138,7 @@ public class CertificateApproval {
 		{
 			Transaction tx=session.beginTransaction();
 			rationcard.setDateOfApproval(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
-			rationcard.setApproval(1);
+			//rationcard.setApproval(1);
 			session.update(rationcard);
 			tx.commit();
 		}

@@ -49,10 +49,10 @@ public class User {
 		return result;
 	}
 	
-	@Path("/Profile/{id}")
+	@Path("/Profile/{Id}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public model.UserProfile login(String id)
+	public model.UserProfile login(@PathParam("Id")String id)
 	{
 				return new biz.User().getUserProfile(id);
 	}

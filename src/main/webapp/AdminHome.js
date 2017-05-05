@@ -22,7 +22,7 @@ angular.module('AdminHomeApp', ['ngRoute', 'ngCookies'])
 				
 			})
 			.when('/DomicileCertificate', {
-				templateUrl : "HtmlFile/DomicileCertificate.html",
+				templateUrl : "Admin/Html/DomicileCertificate.html",
 				controller : "DomicileCertificate"
 			})
 			.when('/logout', {

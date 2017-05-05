@@ -1,10 +1,12 @@
 package biz;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 
 import util.StatusCode;
 
@@ -22,9 +24,18 @@ public class User {
 			return status;
 		}
 
-		catch (Exception e) {
+		catch (ConstraintViolationException  e) {
 			tx.rollback();
 			System.out.println(e.getMessage());
+			status=StatusCode.UnknownError;
+			return status;
+		}
+		
+		catch(Exception e)
+		{
+			tx.rollback();
+			System.out.println(e.getMessage());
+			status=StatusCode.Error;
 			return status;
 		}
 
@@ -102,23 +113,26 @@ public class User {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		//Transaction tx = session.beginTransaction();
 		model.UserProfile userprofile=new model.UserProfile();
+		ArrayList<model.CertificateDetail> cd=new ArrayList<model.CertificateDetail>();
 		model.CertificateDetail c=new model.CertificateDetail();
+		System.out.println("id="+id);
 		
 		try {
 			Transaction tx = session.beginTransaction();
-			Query query=session.createQuery("FROM AadhaarDetail A WHERE A.AadhaarNumber=:id");
+			Query query=session.createQuery("FROM AadhaarDetail A WHERE A.AadhaarNumber = :id");
 			query.setParameter("id", id);
-			userprofile.setUser((model.User) query.uniqueResult());
+			userprofile.setUser((model.AadhaarDetail) query.uniqueResult());
 			tx.commit();
+			
+			//System.out.println("111111111f="+userprofile.getUser().getAadhaarNumber());
 			
 			 tx = session.beginTransaction();
 			model.FamilyDetail f=new model.FamilyDetail();
-			query=session.createQuery("FROM FamilyDetail A WHERE A.aadhaarNo=:id");
+			f.setCertificateno(-1);
+			query=session.createQuery("FROM FamilyDetail A WHERE A.aadhaarNo = :id");
 			query.setParameter("id", id);
-			System.out.println("111111111f=");
 			f=(model.FamilyDetail) query.uniqueResult();
-			System.out.println("11111111122222222f="+f);
-			//if(f.getAadhaarNo().length()==12)
+			if(f!=null)
 			{
 				System.out.println("f="+f.getAadhaarNo());
 				c.setCertificateNumber(f.getCertificateno());
@@ -130,69 +144,81 @@ public class User {
 				else
 				  c.setApproval("Approved");
 				
+				cd.add(c);
+				//userprofile.certi.add(c);
 			}
 			tx.commit();
-			userprofile.getCerti().add(c);
+			
 			
 			model.CasteCertificate p=null;
-			query=session.createQuery("FROM CasteCertificate A WHERE A.aadharNo=:id");
+			tx = session.beginTransaction();
+			query=session.createQuery("FROM CasteCertificate A WHERE A.aadharNo = :id");
 			query.setParameter("id", id);
 			p=(model.CasteCertificate) query.uniqueResult();
-			if(f!=null)
+			if(p!=null)
 			{
-				c.setCertificateNumber(f.getCertificateno());
+				c.setCertificateNumber(p.getCertificateNo());
 				c.setTypeOfCertificate("CasteCertificate");
-				if(f.getApproval()==-1)
+				if(p.getApproval()==-1)
 				{
 					c.setApproval("NotApproved");
 				}
 				else
 				  c.setApproval("Approved");
 				
+				cd.add(c);
+				//userprofile.getCerti().add(c);
 			}
 			
-			
-			userprofile.getCerti().add(c);
+			tx.commit();
 			
 			model.DomicileCertificate u=null;
-			query=session.createQuery("FROM DomicileCertificate A WHERE A.aadharNo=:id");
+			tx = session.beginTransaction();
+			query=session.createQuery("FROM DomicileCertificate A WHERE A.aadhaarNo= :id");
 			query.setParameter("id", id);
 			u=(model.DomicileCertificate) query.uniqueResult();
-			if(f!=null)
+			if(u!=null)
 			{
-				c.setCertificateNumber(f.getCertificateno());
+				c.setCertificateNumber(u.getCertificateNo());
 				c.setTypeOfCertificate("DomicileCertificate");
-				if(f.getApproval()==-1)
+				if(u.getApproval()==-1)
 				{
 					c.setApproval("NotApproved");
 				}
 				else
 				  c.setApproval("Approved");
 				
+				cd.add(c);
+				//userprofile.getCerti().add(c);
 			}
 			
-			userprofile.getCerti().add(c);
+			tx.commit();
 			
 			
 			model.BirthCertificate b=null;
-			query=session.createQuery("FROM BirthCertificate A WHERE A.aadharNo=:id");
-			query.setParameter("id", id);
+			tx = session.beginTransaction();
+			query=session.createQuery("FROM BirthCertificate A WHERE A.fathersName = :fathername AND A.name = :name");
+			query.setParameter("fathername", userprofile.getUser().getFatherFirstName());
+			query.setParameter("name", userprofile.getUser().getFirstName());
 			b=(model.BirthCertificate) query.uniqueResult();
-			if(f!=null)
+			if(b!=null)
 			{
-				c.setCertificateNumber(f.getCertificateno());
+				c.setCertificateNumber(b.getCertificateNo());
 				c.setTypeOfCertificate("BirthCertificate");
-				if(f.getApproval()==-1)
+				if(b.getApproval()==-1)
 				{
 					c.setApproval("NotApproved");
 				}
 				else
 				  c.setApproval("Approved");
 				
+				cd.add(c);
+				//userprofile.getCerti().add(c);
 			}
 			
-			userprofile.getCerti().add(c);
+			tx.commit();
 			
+			userprofile.setCertificatedetails(cd);
 			return userprofile;
 			
 		}

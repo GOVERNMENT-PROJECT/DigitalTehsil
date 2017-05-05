@@ -20,7 +20,7 @@
 				           	<th colspan="2">Approve/Disapprove</th>
 				          </tr>
 				          <tr ng-repeat="repo in User ">
-				          	 <td> {{repo.certificateNumber}} </td>
+				          	 <td> {{repo.certificateNo}} </td>
 				            <td> {{repo.name}} </td>
 				            <td> {{repo.sex}} </td>
 				            <td> {{repo.fathersName}} </td>
@@ -28,8 +28,8 @@
 				            <td> {{repo.fatherAadhaarNumber}} </td>
 				            <td> {{repo.placeOfBirth}} </td>
 				            <td> {{repo.dateOfBirth}} </td>
-				            <td>Approve<input type="radio" ng-model="repo.approval" value="1"/></td>
-				            <td>Disapprove<input type="radio" ng-model="repo.approval" value="0"/></td>
+				            <td>Approve<input type="radio" ng-model="repo.approval" ng-value="1"/></td>
+				            <td>Disapprove<input type="radio" ng-model="repo.approval" ng-value="-1"/></td>
 				          </tr>
 				        </tbody>
 				      </table>

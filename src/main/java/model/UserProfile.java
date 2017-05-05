@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class UserProfile {
 	
-	public model.User user;
+	public model.AadhaarDetail user;
 	
 	public ArrayList<model.CertificateDetail> certi;
 
-	public model.User getUser() {
+	public model.AadhaarDetail getUser() {
 		return user;
 	}
 
-	public void setUser(model.User user) {
+	public void setUser(model.AadhaarDetail user) {
 		this.user = user;
 	}
 

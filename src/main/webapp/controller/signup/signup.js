@@ -21,8 +21,12 @@ angular.module('MainApp')
 							$cookies.put("LoginId", $scope.User.aadhaarNumber);
 							window.location="/e-Tehsil/Home.html";
 						}
+						else if(response.data.status == -1){
+							$log.log("already registered");
+							window.location="/e-Tehsil/index.html";
+						}
 						else{
-							$log.log("can't register now! databse problem.");
+							$log.log("aadhaar not registered.");
 							window.location="/e-Tehsil/index.html";
 						}
 					}, 

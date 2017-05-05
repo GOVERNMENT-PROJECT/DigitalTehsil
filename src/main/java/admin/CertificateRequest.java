@@ -1,5 +1,6 @@
 package admin;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -97,19 +98,20 @@ public class CertificateRequest {
 	{
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		ArrayList<model.FamilyDetail> rationcards = null;
-		
+		model.FamilyDetail f=new model.FamilyDetail();
 		try
 		{		
 			session.beginTransaction();
-			Query query=session.createQuery("FROM FamilyDetail C WHERE C.approval=-1 ");
+			Query query=session.createQuery(" FROM FAMILYDETAIL F WHERE F.approval=-1 ");
 			rationcards = (ArrayList<model.FamilyDetail>) query.list();
-		
+			
 		    return rationcards;
 		
 		}
 		
 		catch(Exception e)
 		{
+			e.printStackTrace();
 			return rationcards;
 		}
 		
