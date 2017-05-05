@@ -1,0 +1,75 @@
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6 form-box wow fadeInUp animated well" style="visibility: visible; animation-name: fadeInUp;">
+	<div class="form-top">
+		<div class="from-top-left"><h2><b>Old Age Pension Form</b></h2></div>
+	</div>
+	<div calss="form-bottom">
+		<form name="userForm" ng-submit="apply()">
+			<div class = "from-group" >
+			
+				<div class="help-block" style="color: red" ng-messages="userForm.check1.$error" ng-if="userForm.check1.$touched">
+					<p ng-message="required">* "I solemnly affirm that" agreement written below must be checked before applying</p>
+				</div>
+				
+				<div class="help-block" style="color: red" ng-messages="userForm.check2.$error" ng-if="userForm.check2.$touched">
+					<p ng-message="required">* "Other User Details" agreement written below must be checked before applying.</p>
+				</div>
+				
+				<b>Categories :</b>
+				<select class="form-control" ng-model="user.categories">
+					<option value="SC" selected>SC</option>
+					<option value="ST">ST</option>
+					<option value="WOMAN">WOMAN</option>
+					<option value="LANDLESS">LANDLESS</option>
+					<option value="HANDICAPPED">HANDICAPPED</option>
+					<option value="GENERAL">GENERAL</option>
+				</select>
+				<br>
+			    
+			    <b>Identification Mark of the applicant :</b>
+				<textarea ng-model="user.mark" name="mark"  row="10" class="form-control" placeholder="Details of identifiaction mark"  required/></textarea>
+				<div class="help-block" style="color: red" ng-messages="userForm.mark.$error" ng-if="userForm.mark.$touched">
+					<p ng-message="required">*Please enter identification mark detail.</p>
+				</div>
+				<br>
+				
+				<div class="panel panel-default">
+					<div class="panel-header">
+						<input type="checkbox" name="check1" ng-model="user.check1" ng-value="true" required><b>I solemnly affirm that :-</b>
+		      		</div>
+		      		<div class="panel-body">
+		      		<p>
+			      		(1) I do not have any family income of Rs. 5,000/- per annum or more.<br>
+						(2) I have/have not applied previously for grant of Old Age Pension.<br>
+						(3) I am a resident of gorakhpur where I have been residing during the three years immediately preceding the date of this application.<br>
+						(4) I declare that the information furnished in this application is true and correct to the best of my knowledge and belief.<br>
+		      		
+		      			If you agree with above condition, then tick the check box.
+			      	</p>
+		      		</div>
+	    		</div>
+	    		<br>
+	    		
+	    		<div class="panel panel-default">
+					<div class="panel-header">
+						<input type="checkbox" name="check2" ng-model="user.check2" ng-value="true" required><b>Other User Details</b>
+		      		</div>
+		      		<div class="panel-body">
+			      		Rest of your details will be tooked from your aadhaar detail, such as :<br>
+				      		-Your full name<br>
+				      		-Your fathers name<br>
+				      		-Your residential address<br>
+				      		-Age<br>
+			      		If you agree with this and have all your details are valid and correct on your card then tick the check box.
+			      	</div>
+	    		</div>
+				<br>
+								
+			    <input type = "submit" value = "CLICK HERE TO APPLY" class = "btn btn-block btn-primary">
+			</div>
+		</form>
+	</div>
+</div>
+<div class="col-sm-3"></div>
+</div>

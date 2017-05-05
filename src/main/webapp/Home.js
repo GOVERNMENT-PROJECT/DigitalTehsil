@@ -1,4 +1,4 @@
-angular.module('HomeApp', ['ngRoute', 'ngCookies'])
+angular.module('HomeApp', ['ngRoute', 'ngCookies', 'ngMessages'])
 	.config(function($routeProvider){
 		$routeProvider
 			.when('/Forms', {
@@ -24,6 +24,10 @@ angular.module('HomeApp', ['ngRoute', 'ngCookies'])
 			.when('/DomicileCertificate', {
 				templateUrl : "HtmlFile/DomicileCertificate.html"
 				
+			})
+			.when('/OldAgePension', {
+				templateUrl : "HtmlFile/OldAgePension.html",
+				controller : "OldAgePension"
 			})
 			.when('/User', {
 				templateUrl : "HtmlFile/Profile.html",
