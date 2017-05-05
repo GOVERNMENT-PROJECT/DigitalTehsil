@@ -13,16 +13,16 @@ import javax.ws.rs.core.MediaType;
 @Path("apply")
 public class Applying {
 	
-	@Path("/newborn")
+	@Path("/newborn/{Id}")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public model.Result newBornRegister(model.BirthCertificate newuser)
+	public model.Result newBornRegister(@PathParam("Id") String id,model.BirthCertificate newuser)
 	{
 		System.out.println("Fathers Name : " +newuser.getFathersName());
 		System.out.println("Mothers Name : " +newuser.getMothersName());
 		model.Result result=new model.Result();
-		result.setStatus(new  biz.Applying().newBornRegistration(newuser).getStatusCode());
+		result.setStatus(new  biz.Applying().newBornRegistration(id,newuser).getStatusCode());
 		return result;
 		
 	}

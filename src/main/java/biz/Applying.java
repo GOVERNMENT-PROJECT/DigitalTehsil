@@ -11,7 +11,7 @@ import util.StatusCode;
 
 public class Applying {
 
-	public util.StatusCode newBornRegistration(model.BirthCertificate newuser)
+	public util.StatusCode newBornRegistration(String id,model.BirthCertificate newuser)
 	{
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx=session.beginTransaction();
@@ -21,7 +21,7 @@ public class Applying {
 		{		
 			newuser.setApproval(-1);
 			newuser.setDateOfApplying(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
-			
+			newuser.setFatherAadhaarNumber(id);
 		   session.save(newuser);
 		   tx.commit();
 		   status=StatusCode.Success;

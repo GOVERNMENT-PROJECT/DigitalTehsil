@@ -15,7 +15,7 @@ public class OldPensionForm {
 	@Column(name="categories")
 	public String categories;
 	
-	@Column(name="mark")
+	@Column(name="IdentificationMark")
 	public String mark;
 	
 	@Column(name="aadhaarno")

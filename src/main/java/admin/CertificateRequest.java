@@ -129,7 +129,7 @@ public class CertificateRequest {
 		try
 		{		
 			session.beginTransaction();
-			Query query=session.createQuery("FROM CasteCertificate C WHERE C.approval=-1");
+			Query query=session.createQuery("FROM OldPensionForm C WHERE C.approval=-1");
 			op = (ArrayList<model.OldPensionForm>) query.list();
 		
 		    return op;
