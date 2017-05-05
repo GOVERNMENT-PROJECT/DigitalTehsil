@@ -10,11 +10,14 @@ angular.module('HomeApp')
 					$log.log(response);
 					$log.log(response.data);
 					$scope.myWelcome = response.data;
-					window.location="/e-Tehsil/HtmlFile/Success.html";
+					alert("Successfully applied for old age pension certificate.");
+					window.location="/e-Tehsil/Home.html#/Forms";
 				}, 
 				function myError(response) {
 					$log.log("Ohh no!");
+					alert("something went wrong. Re-apply for old age pension certificate. ");
 					$scope.myWelcome = response.statusText;
+					window.location="/e-Tehsil/Home.html#/OldAgePension";
 				}); 
 	    };
 

@@ -10,24 +10,18 @@
 				        <tbody>
 				          <tr class="active">
 				          	<th>Certificate Number</th>
-				            <th>Name</th>
 				            <th>Aadhaar Number</th>
-				            <th>Sex</th>
-				            <th>Date of Birth</th>
-				            <th>Address</th>
 				            <th>Caste</th>
+				            <th>Date Of Applying</th>
 				            <th>Identification Mark</th>
 				           	<th colspan="2">Approve/Disapprove</th>
 				          </tr>
 				          <tr ng-repeat="repo in User ">
-				          	 <td> {{repo.certificateNo}} </td>
-				            <td> {{repo.name}} </td>
+				          	<td> {{repo.certificateNo}} </td>
 				            <td> {{repo.aadhaarNo}} </td>
-				            <td> {{repo.sex}} </td>
-				            <td> {{repo.dateOfBirth}} </td>
-				            <td> {{repo.addressLine1+" "+repo.addressLine2+" "+repo.addressLine3}} </td>
-				            <td> {{repo.placeOfBirth}} </td>
-				            <td> {{repo.dateOfBirth}} </td>
+				           	<td> {{repo.categories}} </td>
+				            <td> {{repo.dateOfApplying}} </td>
+				            <td> {{repo.mark}} </td>
 				            <td>Approve<input type="radio" ng-model="repo.approval" ng-value="1"/></td>
 				            <td>Disapprove<input type="radio" ng-model="repo.approval" ng-value="-1"/></td>
 				          </tr>

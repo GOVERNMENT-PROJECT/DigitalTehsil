@@ -43,13 +43,15 @@ angular.module('HomeApp')
 							$log.log(response);
 							$log.log(response.data);
 							$scope.myWelcome = response.data;
-							window.location="/e-Tehsil/HtmlFile/Success.html";
+							alert("Data has been successfully saved. ")
+							window.location="/e-Tehsil/Home.html#/Forms";
 						}, 
 								
 						function myError(response) {
 						  $log.log("Ohh no!");
-						  alert("something went wrong. Re-apply for ration card ")
+						  alert("something went wrong. Re-apply for ration card ");
 						  $scope.myWelcome = response.statusText;
+						  window.location="/e-Tehsil/Home.html#/RationCard";
 						}); 
 	    };
 
