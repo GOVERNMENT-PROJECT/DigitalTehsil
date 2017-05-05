@@ -28,7 +28,7 @@ angular.module('HomeApp', ['ngRoute', 'ngCookies', 'ngMessages'])
 			})
 			.when('/OldAgePension', {
 				templateUrl : "HtmlFile/OldAgePension.html",
-				controller : "OldAgePension"
+				controller : "OldAgeCertificate"
 			})
 			.when('/User', {
 				templateUrl : "HtmlFile/Profile.html",

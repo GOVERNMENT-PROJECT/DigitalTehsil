@@ -83,7 +83,7 @@ public class Applying {
 	}
 	
 	
-	public util.StatusCode casteCertificateRegistration(model.CasteCertificate cz,String id)
+	public util.StatusCode oldagepensionCertificateRegistration(model.OldPensionForm cz,String id)
 	{
 		
 		
@@ -96,7 +96,7 @@ public class Applying {
 		cz.setApproval(-1);
 		cz.setDateOfApplying(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
 		
-				cz.setAadharNo(id);
+				cz.setAadhaarno(id);
 				session.save(cz);
 				tx.commit();
 				

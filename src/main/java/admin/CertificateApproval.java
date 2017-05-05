@@ -160,4 +160,41 @@ public class CertificateApproval {
 		}
 	}
 
+	
+	public util.StatusCode oldpensionAprroval(ArrayList<model.OldPensionForm> op)
+	{
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		StatusCode status = StatusCode.UnknownError;
+		Calendar c;
+		
+		try
+		{
+			
+		
+		for(model.OldPensionForm rationcard: op )
+		{
+			Transaction tx=session.beginTransaction();
+			rationcard.setDateOfApproval(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+			//rationcard.setApproval(1);
+			session.update(rationcard);
+			tx.commit();
+		}
+		
+		status=StatusCode.Success;
+		return status;
+		
+		}
+		
+		catch(Exception e)
+		{
+			status=StatusCode.UnknownError;
+			return status;
+		}
+		
+		finally
+		{
+			session.close();
+		}
+	}
+
 }

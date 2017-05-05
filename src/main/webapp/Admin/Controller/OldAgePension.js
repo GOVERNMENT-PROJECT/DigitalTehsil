@@ -1,7 +1,7 @@
 angular.module('AdminHomeApp')
 	.controller('OldAgePension', function ($scope,$http,$log, $cookies) {
 
-	   $http.get("http://localhost:8080/e-Tehsil/webapp/Admin/OldAgePensionCertificateRequest", 
+	   $http.get("http://localhost:8080/e-Tehsil/webapp/Admin/OldPensionCertificateRequest", 
 	      {	headers: { 'Content-Type': 'application/json' } }).
 	      		then(function mySucces(response) {
 	      			$log.log("We are Successful");
@@ -15,7 +15,7 @@ angular.module('AdminHomeApp')
 	   
 	   $scope.Save=function(){
 		   	var obj = JSON.stringify($scope.User);
-	   		$http.post("http://localhost:8080/e-Tehsil/webapp/Admin/OldAgePensionCertificateApproval", obj,
+	   		$http.post("http://localhost:8080/e-Tehsil/webapp/Admin/OldPensionApproval", obj,
 				{ headers: { 'Content-Type': 'application/json' } }).
 				   	then(function mySucces(response) {
 				      	$log.log("We are Successful");

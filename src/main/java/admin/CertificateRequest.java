@@ -120,5 +120,31 @@ public class CertificateRequest {
 			session.close();
 		}
 	}
+	
+	public ArrayList<model.OldPensionForm> oldpensionformRequest()
+	{
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		ArrayList<model.OldPensionForm> op = null;
+		
+		try
+		{		
+			session.beginTransaction();
+			Query query=session.createQuery("FROM CasteCertificate C WHERE C.approval=-1");
+			op = (ArrayList<model.OldPensionForm>) query.list();
+		
+		    return op;
+		
+		}
+		
+		catch(Exception e)
+		{
+			return op;
+		}
+		
+		finally
+		{
+			session.close();
+		}
+	}
 
 }

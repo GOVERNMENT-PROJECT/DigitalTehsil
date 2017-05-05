@@ -47,6 +47,20 @@ public class AdminFunction {
 		return result;
 	}
 	
+	@Path("/OldPensionApproval")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public model.Result oldpensionApproval(ArrayList<model.OldPensionForm>  op)
+	{		
+		StatusCode status= new  admin.CertificateApproval().oldpensionAprroval(op);
+		
+		model.Result result=new model.Result();
+		result.setStatus(status.getStatusCode());
+		
+		return result;
+	}
+	
 	
 	@Path("/DomicileCertificateApproval")
 	@POST
@@ -107,6 +121,14 @@ public class AdminFunction {
 	public ArrayList<model.CasteCertificate> casteCertificateApproval()
 	{		
 		return new admin.CertificateRequest().casteCertificateRequest();
+	}
+	
+	@Path("/OldPensionCertificateRequest")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<model.OldPensionForm> oldpensionApproval()
+	{		
+		return new admin.CertificateRequest().oldpensionformRequest();
 	}
 	
 	@Path("/DomicileCertificateRequest")
