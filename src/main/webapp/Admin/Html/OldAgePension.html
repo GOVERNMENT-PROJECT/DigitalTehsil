@@ -1,0 +1,42 @@
+<div class="container">
+<h1 style="text-align:center"><b>Birth Certificate Approval</b></h1>
+<div class="row">
+	<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<div class="panel panel-default">
+				<div calss="panel-body">
+				<form ng-submit="Save()">
+					<table class="table table-hover">
+				        <tbody>
+				          <tr class="active">
+				          	<th>Certificate Number</th>
+				            <th>Name</th>
+				            <th>Aadhaar Number</th>
+				            <th>Sex</th>
+				            <th>Date of Birth</th>
+				            <th>Address</th>
+				            <th>Caste</th>
+				            <th>Identification Mark</th>
+				           	<th colspan="2">Approve/Disapprove</th>
+				          </tr>
+				          <tr ng-repeat="repo in User ">
+				          	 <td> {{repo.certificateNo}} </td>
+				            <td> {{repo.name}} </td>
+				            <td> {{repo.aadhaarNo}} </td>
+				            <td> {{repo.sex}} </td>
+				            <td> {{repo.dateOfBirth}} </td>
+				            <td> {{repo.addressLine1+" "+repo.addressLine2+" "+repo.addressLine3}} </td>
+				            <td> {{repo.placeOfBirth}} </td>
+				            <td> {{repo.dateOfBirth}} </td>
+				            <td>Approve<input type="radio" ng-model="repo.approval" ng-value="1"/></td>
+				            <td>Disapprove<input type="radio" ng-model="repo.approval" ng-value="-1"/></td>
+				          </tr>
+				        </tbody>
+				      </table>
+				      <input type = "submit" value = "Save" class = "btn btn-block btn-primary">
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

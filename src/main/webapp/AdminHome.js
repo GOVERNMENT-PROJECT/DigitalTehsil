@@ -11,7 +11,7 @@ angular.module('AdminHomeApp', ['ngRoute', 'ngCookies'])
 			})
 			.when('/BirthCertificate', {
 				templateUrl : "Admin/Html/BirthCertificate.html",
-					controller : "BirthCertificate"
+				controller : "BirthCertificate"
 			})
 			.when('/DeathCertificate', {
 				templateUrl : "HtmlFile/DeathCertificate.html"
@@ -20,6 +20,10 @@ angular.module('AdminHomeApp', ['ngRoute', 'ngCookies'])
 			.when('/CasteCertificate', {
 				templateUrl : "HtmlFile/CasteCertificate.html"
 				
+			})
+			.when('/OldAgePension', {
+				templateUrl : "Admin/Html/OldAgePension.html",
+				controller : "OldAgePension"
 			})
 			.when('/DomicileCertificate', {
 				templateUrl : "Admin/Html/DomicileCertificate.html",
