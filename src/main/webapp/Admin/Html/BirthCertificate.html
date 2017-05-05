@@ -17,6 +17,7 @@
 				            <th>Fathers Aadhaar Number</th>
 				            <th>Place of Birth</th>
 				            <th>Date of Birth</th>
+				            <th>Date of Applying</th>
 				           	<th colspan="2">Approve/Disapprove</th>
 				          </tr>
 				          <tr ng-repeat="repo in User ">
@@ -28,6 +29,7 @@
 				            <td> {{repo.fatherAadhaarNumber}} </td>
 				            <td> {{repo.placeOfBirth}} </td>
 				            <td> {{repo.dateOfBirth}} </td>
+				            <td> {{repo.dateOfApplying}} </td>
 				            <td>Approve<input type="radio" ng-model="repo.approval" ng-value="1"/></td>
 				            <td>Disapprove<input type="radio" ng-model="repo.approval" ng-value="-1"/></td>
 				          </tr>

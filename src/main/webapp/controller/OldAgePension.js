@@ -7,6 +7,7 @@ angular.module('HomeApp')
 	      {	headers: { 'Content-Type': 'application/json' } }).
 	          then(function mySucces(response) {
 					$log.log("We are Successful");
+					$log.log(obj);
 					$log.log(response);
 					$log.log(response.data);
 					$scope.myWelcome = response.data;
