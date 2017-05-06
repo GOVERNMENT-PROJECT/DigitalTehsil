@@ -1,22 +1,5 @@
-<div >
-<br>
-<br>
-<div class="row">
-	<div class="col-md-4"></div>
-		<div class="col-md-4">
-		<form name="userForm" ng-submit="show()" class="well">
-			<h2><b>Please enter the aadhaar number of the user whose profile want to see.</b></h2><br><br>
-			<input ng-model="data.UserAadhaarNumber" name="aadhaarNumber" type="number" class="form-control" placeholder="AadharNumber" ng-minlength="12" ng-maxlength="12" required/><br>
-			<div class="help-block" style="color: red" ng-messages="userForm.aadhaarNumber.$error" ng-if="userForm.aadhaarNumber.$touched">
-			  	<p ng-message="minlength">*Aadhaar Number is too short</p>
-			    <p ng-message="maxlength">*Aadhaar Number is too long</p>
-			    <p ng-message="required">*Aadhaar Number is required</p>
-			</div>
-			<input type = "submit" value = "Submit" class = "btn btn-block btn-primary">
-		</div>
-</div>
+<div>
 
-<div ng-show="view">
 	<div class="row">
 		<div class="col-md-2"></div>
 		<div class="panel panel-default">
@@ -111,7 +94,5 @@
 			</div>
 		</div>
 	</div>
-
-</div>
 
 </div>

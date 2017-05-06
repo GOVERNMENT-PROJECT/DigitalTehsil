@@ -1,4 +1,4 @@
-angular.module('AdminHomeApp', ['ngRoute', 'ngCookies'])
+angular.module('AdminHomeApp', ['ngRoute', 'ngCookies', 'ngMessages'])
 	.config(function($routeProvider){
 		$routeProvider
 			.when('/Forms', {
@@ -29,10 +29,11 @@ angular.module('AdminHomeApp', ['ngRoute', 'ngCookies'])
 				controller : "LogoutCtrl"
 			})
 			.when('/About', {
-				templateUrl : "HtmlFile/About.html",
+				templateUrl : "HtmlFile/About.html"
 			})
 			.when('/User', {
 				templateUrl : "Admin/Html/Profile.html",
+				controller : "Profile"
 			})
 			.otherwise({
 				redirectTo : '/Forms'
