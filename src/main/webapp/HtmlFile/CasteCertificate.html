@@ -2,24 +2,25 @@
 <div class="col-sm-3"></div>
 <div class="col-sm-6 form-box wow fadeInUp animated well" style="visibility: visible; animation-name: fadeInUp;">
 	<div class="form-top">
-		<div class="from-top-left"><h3>Caste Certificate Registration Form</h3></div>
+		<div class="from-top-left"><h2><b>Caste Certificate Registration Form</b></h2></div>
 	</div>
 	<div calss="form-bottom">
-		<form ng-submit="apply()">
+		<form name="userForm" ng-submit="apply()">
 			<div class = "from-group" >
 				
-				<select ng-model="data.caste" ng-change="selectedItemChanged()">
-					<option value="sc">SC</option>
-					<option value="st">ST</option>
-					<option value="obc">OBC</option>
+				<select class="form-control" ng-model="data.caste" ng-change="selectedItemChanged()">
+					<option value="sc">SCHEDULE CASTE</option>
+					<option value="st">SCHEDULE TRIBE</option>
+					<option value="obc">OTHER BACKWARD CASTE</option>
+					<option value="general">GENERAL CASTE</option>
     			</select>
 				
 				
 				
 				
 <div ng-show="sc">
-	SC :
-	<select ng-model="data.subcaste">
+	<h3>Subcaste SC</h3> :
+	<select class="form-control" ng-model="data.subcaste">
 		<option value="AHARIYA">AHARIYA</option>
 		<option value="GOND">GOND</option>
 		<option value="JATAV">JATAV</option>
@@ -35,8 +36,8 @@
 </div>
 
 <div ng-show="general">
-	general :
-	<select ng-model="data.subcaste">
+	<h3>Subcaste General</h3> :
+	<select class="form-control" ng-model="data.subcaste">
 		<option value="SINGH">SINGH</option>
 		<option value="PANDEY">PANDEY</option>
 		<option value="SRIVASTAV">SRIVASTAV</option>
@@ -52,8 +53,8 @@
 </div>
 
 <div ng-show="obc">
-	obc :
-	<select ng-model="data.subcaste">
+	<h3>Subcaste OBC</h3> :
+	<select class="form-control" ng-model="data.subcaste">
 		<option value="NISHAD">NISHAD</option>
 		<option value="YADAV">YADAV</option>
 		<option value="PRAJAPATI">PRAJAPATI</option>
@@ -69,8 +70,8 @@
 </div>
 
 <div ng-show="st">
-	st :
-	<select ng-model="data.subcaste">
+	<h3>Subcaste ST</h3> :
+	<select class="form-control" ng-model="data.subcaste">
 		<option value="Bakarwal">Bakarwal</option>
 		<option value="Balti">Balti</option>
 		<option value="Beda">Beda</option>
@@ -84,6 +85,26 @@
 		<option value="Brokpa">Brokpa</option>
 	</select>
 </div>
+	<br>
+	
+	<div class="panel panel-default">
+					<div class="panel-header">
+						<input type="checkbox" name="check2" ng-model="user.check2" ng-value="true" required><b>Other User Details</b>
+		      		</div>
+		      		<div class="panel-body">
+			      		Rest of your details will be tooked from your aadhaar detail, such as :<br>
+				      		-Your full name<br>
+				      		-Your fathers name<br>
+				      		-Your residential address<br>
+				      		-Age<br>
+			      		If you agree with this and have all your details are valid and correct on your card then tick the check box.
+			      	</div>
+	    		</div>
+	    		<div class="help-block" style="color: red" ng-messages="userForm.check2.$error" ng-if="userForm.check2.$touched">
+					<p ng-message="required">* "Other User Details" agreement written below must be checked before applying.</p>
+				</div>
+				<br>
+
 				
 				
 				

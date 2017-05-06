@@ -2,32 +2,39 @@ angular.module('HomeApp')
 	.controller('CasteCertificate', function ($scope,$http,$log, $cookies) {
 		
 		$scope.data={};
-		$scope.caste="sc";
+		$scope.caste;
 		$scope.sc=false;
 		$scope.st=false;
 		$scope.obc=false;
 		$scope.general=false;
 		 $scope.selectedItemChanged = function(){
-			    if($scope.caste=="sc")
+			    if($scope.data.caste=="sc")
 			    {
 			    	$scope.sc=true;
 					$scope.st=false;
 					$scope.obc=false;
 					$scope.general=false;
 			    }
-			    if($scope.caste=="st")
+			    if($scope.data.caste=="st")
 		    	{
 			    	$scope.sc=false;
 					$scope.st=true;
 					$scope.obc=false;
 					$scope.general=false;
 		    	}
-			    if($scope.caste=="obc")
+			    if($scope.data.caste=="obc")
 		    	{
 			    	$scope.sc=false;
 					$scope.st=false;
 					$scope.obc=true;
 					$scope.general=false;
+		    	}
+			    if($scope.data.caste=="general")
+		    	{
+			    	$scope.sc=false;
+					$scope.st=false;
+					$scope.obc=false;
+					$scope.general=true;
 		    	}
 			  }
 		
