@@ -19,8 +19,8 @@ angular.module('HomeApp', ['ngRoute', 'ngCookies', 'ngMessages'])
 				
 			})
 			.when('/CasteCertificate', {
-				templateUrl : "HtmlFile/CasteCertificate.html"
-				
+				templateUrl : "HtmlFile/CasteCertificate.html",
+				controller : "CasteCertificate"
 			})
 			.when('/DomicileCertificate', {
 				templateUrl : "HtmlFile/DomicileCertificate.html",

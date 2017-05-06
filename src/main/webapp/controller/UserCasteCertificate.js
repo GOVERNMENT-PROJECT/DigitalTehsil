@@ -35,20 +35,20 @@ angular.module('AdminHomeApp')
 		   
 		   	var obj = JSON.stringify($scope.data);
 		   	$log.log(obj);
-	   		$http.post("http://localhost:8080/e-Tehsil/webapp/Admin/CasteCertificateApproval", obj,
+	   		$http.post("http://localhost:8080/e-Tehsil/webapp/apply/castecertificate"+$cookies.get("LoginId"), obj,
 				{ headers: { 'Content-Type': 'application/json' } }).
 				   	then(function mySucces(response) {
 				      	$log.log("We are Successful");
 						$log.log(obj);
 						$log.log(response.data);
 						$scope.User = response.data;
-						window.alert("successfully updated data!");
-						window.location="AdminHome.html#/Forms";
+						window.alert("successfully applied for caste certificate!");
+						window.location="/e-Tehsil/Home.html#/Forms";
 					}, 
 					function myError(response) {
 						$log.log("Ohh no!");
 						window.alert("faliure occurs. Please try occurs.");
-						window.location="AdminHome.html#/BirthCertificate";
+						window.location="/e-Tehsil/Home.html#/CasteCertificate";
 					}); 
 	   };
 				
