@@ -1,8 +1,8 @@
-angular.module('AdminHomeApp')
+angular.module('HomeApp')
 	.controller('CasteCertificate', function ($scope,$http,$log, $cookies) {
 		
 		$scope.data={};
-		$scope.caste;
+		$scope.caste="sc";
 		$scope.sc=false;
 		$scope.st=false;
 		$scope.obc=false;
@@ -35,7 +35,7 @@ angular.module('AdminHomeApp')
 		   
 		   	var obj = JSON.stringify($scope.data);
 		   	$log.log(obj);
-	   		$http.post("http://localhost:8080/e-Tehsil/webapp/apply/castecertificate"+$cookies.get("LoginId"), obj,
+	   		$http.post("http://localhost:8080/e-Tehsil/webapp/apply/castecertificate/"+$cookies.get("LoginId"), obj,
 				{ headers: { 'Content-Type': 'application/json' } }).
 				   	then(function mySucces(response) {
 				      	$log.log("We are Successful");
