@@ -2,33 +2,93 @@
 <div class="col-sm-3"></div>
 <div class="col-sm-6 form-box wow fadeInUp animated well" style="visibility: visible; animation-name: fadeInUp;">
 	<div class="form-top">
-		<div class="from-top-left"><h3>Birth Certificate Registration Form</h3></div>
+		<div class="from-top-left"><h3>Caste Certificate Registration Form</h3></div>
 	</div>
 	<div calss="form-bottom">
-		<form ng-submit="SignUp()">
+		<form ng-submit="apply()">
 			<div class = "from-group" >
-				Child Name :
-				<input ng-model="name" type="text" class="form-control" placeholder="Child Name"  required/><br>
-			    Fathers Name :
-				<input ng-model="fathersName" type="text" class="form-control" placeholder="Fathers Name"  required/><br>
-			    Mothers Name :
-				<input ng-model="mothersName" type="text" class="form-control" placeholder="Mothers Name"  required/><br>
-			    Date of Birth :
-				<input ng-model="dateOfBirth" type="date" class="form-control" placeholder="Date of Birth"  required/><br>
-			    Place of Birth :
-				<input ng-model="placeOfBirth" type="text" class="form-control" placeholder="Place of Birth"  required/><br>
-			    District :
-				<select ng-model="district" class="form-control">
-					<option value="Gorakhpur" selected="true">Gorakhpur</option>
-				</select>
-				<br>
-				Sex :
-				<select ng-model="sex" class="form-control">
-					<option value="Male" selected>Male</option>
-					<option value="Female">Female</option>
-				</select>
-			    <br>
-			    <input type = "submit" value = "Register" class = "btn btn-block btn-primary">
+				
+				<select ng-model="data.caste" ng-change="selectedItemChanged()">
+					<option value="sc">SC</option>
+					<option value="st">ST</option>
+					<option value="obc">OBC</option>
+    			</select>
+				
+				
+				
+				
+<div ng-show="sc">
+	SC :
+	<select ng-model="data.subcaste">
+		<option value="AHARIYA">AHARIYA</option>
+		<option value="GOND">GOND</option>
+		<option value="JATAV">JATAV</option>
+		<option value="DHOBI">DHOBI</option>
+		<option value="KAPARIYA">KAPARIYA</option>
+		<option value="KANJAR">KANJAR</option>
+		<option value="PATARI">PATARI</option>
+		<option value="PASI">PASI</option>
+		<option value="SANSIYA">SANSIYA</option>
+		<option value="SHILPKAR">SHILPKAR</option>
+		<option value="TURAIHA">TURAIHA</option>
+	</select>
+</div>
+
+<div ng-show="general">
+	general :
+	<select ng-model="data.subcaste">
+		<option value="SINGH">SINGH</option>
+		<option value="PANDEY">PANDEY</option>
+		<option value="SRIVASTAV">SRIVASTAV</option>
+		<option value="RAI">RAI</option>
+		<option value="GUPTA">GUPTA</option>
+		<option value="TIWARI">TIWARI</option>
+		<option value="DUBEY">DUBEY</option>
+		<option value="KHAN">KHAN</option>
+		<option value="SIDDHIQUE">SIDDHIQUE</option>
+		<option value="AHMED">AHMED</option>
+		<option value="ANSARI">ANSARI</option>
+	</select>
+</div>
+
+<div ng-show="obc">
+	obc :
+	<select ng-model="data.subcaste">
+		<option value="NISHAD">NISHAD</option>
+		<option value="YADAV">YADAV</option>
+		<option value="PRAJAPATI">PRAJAPATI</option>
+		<option value="KURMI">KURMI</option>
+		<option value="PATEL">PATEL</option>
+		<option value="BAGHEL">BAGHEL</option>
+		<option value="CHAURASHIYA">CHAURASHIYA</option>
+		<option value="TELI">TELI</option>
+		<option value="GHANDHI">GHANDHI</option>
+		<option value="DARJI">DARJI</option>
+		<option value="IDRISI">IDRISI</option>
+	</select>
+</div>
+
+<div ng-show="st">
+	st :
+	<select ng-model="data.subcaste">
+		<option value="Bakarwal">Bakarwal</option>
+		<option value="Balti">Balti</option>
+		<option value="Beda">Beda</option>
+		<option value="Changpa">Changpa</option>
+		<option value="Gaddi">Gaddi</option>
+		<option value="Garra">Garra</option>
+		<option value="Gujjar">Gujjar</option>
+		<option value="Mon">Mon</option>
+		<option value="Purigpa">Purigpa</option>
+		<option value="Sippi">Sippi</option>
+		<option value="Brokpa">Brokpa</option>
+	</select>
+</div>
+				
+				
+				
+				
+			    <input type = "submit" value = "APPLY" class = "btn btn-block btn-primary">
 			</div>
 		</form>
 	</div>
