@@ -34,6 +34,9 @@ public class CasteCertificate {
 	@Column(name="Caste")
 	public String caste;
 	
+	@Column(name="Subcaste")
+	public String subcaste;
+	
 	public int getApproval() {
 		return approval;
 	}
@@ -72,6 +75,22 @@ public class CasteCertificate {
 
 	public void setDateOfApplying(Date dateOfApplying) {
 		this.dateOfApplying = dateOfApplying;
+	}
+
+	public String getCaste() {
+		return caste;
+	}
+
+	public void setCaste(String caste) {
+		this.caste = caste;
+	}
+
+	public String getSubcaste() {
+		return subcaste;
+	}
+
+	public void setSubcaste(String subcaste) {
+		this.subcaste = subcaste;
 	}
 	
 	

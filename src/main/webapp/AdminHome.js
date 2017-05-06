@@ -13,8 +13,8 @@ angular.module('AdminHomeApp', ['ngRoute', 'ngCookies', 'ngMessages'])
 				controller : "BirthCertificate"
 			})
 			.when('/CasteCertificate', {
-				templateUrl : "HtmlFile/CasteCertificate.html"
-				
+				templateUrl : "Admin/Html/CasteCertificate.html",
+					controller : "CasteCertificate"
 			})
 			.when('/OldAgePension', {
 				templateUrl : "Admin/Html/OldAgePension.html",

@@ -141,6 +141,9 @@ public class Applying {
 		   return status;
 		}
 		
+		
+		
+		
 		catch(Exception e)
 		{
 			tx.rollback();
@@ -154,6 +157,43 @@ public class Applying {
 
 		
 	}
+	
+	
+	public util.StatusCode casteCertificateRegistration(model.CasteCertificate cz,String id)
+	{
+		
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx=null;
+		StatusCode status = StatusCode.UnknownError;
+		try
+		{
+		tx=session.beginTransaction();
+		cz.setApproval(-1);
+		cz.setDateOfApplying(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+		
+				cz.setAadharNo(id);;
+				session.save(cz);
+				tx.commit();
+				
+			status=StatusCode.Success;
+		   return status;
+		}
+		
+		catch(Exception e)
+		{
+			tx.rollback();
+			return status;
+		}
+		
+		finally
+		{
+			session.close();
+		}
+
+		
+	}
+
 	
 	public model.AadhaarDetail identityCertificateRegistering(String id) {
 		Session session = HibernateUtil.getSessionFactory().openSession();

@@ -1,0 +1,36 @@
+<div class="container">
+<h1 style="text-align:center"><b>Caste Certificate Approval</b></h1>
+<div class="row">
+	<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<div class="panel panel-default">
+				<div calss="panel-body">
+				<form ng-submit="Save()">
+					<table class="table table-hover">
+				        <tbody>
+				          <tr class="active">
+				          	<th>Certificate Number</th>
+				            <th>Caste</th>
+				            <th>Subcaste</th>
+				            <th> Aadhaar Number</th>				           
+				            <th>Date of Applying</th>
+				           	<th colspan="2">Approve/Disapprove</th>
+				          </tr>
+				          <tr ng-repeat="repo in User ">
+				          	 <td> {{repo.certificateNo}} </td>
+				            <td> {{repo.caste}} </td>
+				            <td> {{repo.subcaste}} </td>
+				            <td> {{repo.aadharNo}} </td>
+				            <td> {{repo.dateOfApplying}} </td>
+				            <td>Approve<input type="radio" ng-model="repo.approval" ng-value="1"/></td>
+				            <td>Disapprove<input type="radio" ng-model="repo.approval" ng-value="-1"/></td>
+				          </tr>
+				        </tbody>
+				      </table>
+				      <input type = "submit" value = "Save" class = "btn btn-block btn-primary">
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

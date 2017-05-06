@@ -53,7 +53,7 @@ public class Applying {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public model.Result casteRegister(@PathParam("Id") String id,model.OldPensionForm cz)
+	public model.Result oldagepensionRegister(@PathParam("Id") String id,model.OldPensionForm cz)
 	{
 		
 		System.out.println("id : " +id);
@@ -77,7 +77,22 @@ public class Applying {
 		return result;
 		
 	}
+
 	
+	@Path("/castecertificate/{Id}")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public model.Result casteRegister(@PathParam("Id") String id,model.CasteCertificate cz)
+	{
+		
+		System.out.println("id : " +id);
+		model.Result result=new model.Result();
+		result.setStatus( new  biz.Applying().casteCertificateRegistration(cz, id).getStatusCode());
+		return result;
+		
+	}
+
 	
 	
 	

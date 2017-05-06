@@ -14,31 +14,7 @@ import util.StatusCode;
 public class CertificateRequest {
 	
 	
-	public ArrayList<model.CasteCertificate> casteCertificateRequest()
-	{
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		ArrayList<model.CasteCertificate> castecertificates = null;
-		
-		try
-		{		
-			session.beginTransaction();
-			Query query=session.createQuery("FROM CasteCertificate C WHERE C.approval=-1");
-			castecertificates = (ArrayList<model.CasteCertificate>) query.list();
-		
-		    return castecertificates;
-		
-		}
-		
-		catch(Exception e)
-		{
-			return castecertificates;
-		}
-		
-		finally
-		{
-			session.close();
-		}
-	}
+	
 	
 	
 	public ArrayList<model.BirthCertificate> birthCertificateRequest()
@@ -131,6 +107,33 @@ public class CertificateRequest {
 			session.beginTransaction();
 			Query query=session.createQuery("FROM OldPensionForm C WHERE C.approval=-1");
 			op = (ArrayList<model.OldPensionForm>) query.list();
+		
+		    return op;
+		
+		}
+		
+		catch(Exception e)
+		{
+			return op;
+		}
+		
+		finally
+		{
+			session.close();
+		}
+	}
+	
+	
+	public ArrayList<model.CasteCertificate> casteCertificateRequest()
+	{
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		ArrayList<model.CasteCertificate> op = null;
+		
+		try
+		{		
+			session.beginTransaction();
+			Query query=session.createQuery("FROM CasteCertificate C WHERE C.approval=-1");
+			op = (ArrayList<model.CasteCertificate>) query.list();
 		
 		    return op;
 		
