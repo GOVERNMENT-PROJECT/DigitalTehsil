@@ -13,6 +13,9 @@ angular.module('AdminHomeApp')
 					$log.log("Ohh no!");
 				}); 
 	   
+	   
+	   
+	   
 	   $scope.Save=function(){
 		   	var obj = JSON.stringify($scope.User);
 	   		$http.post("http://localhost:8080/e-Tehsil/webapp/Admin/CasteCertificateApproval", obj,
